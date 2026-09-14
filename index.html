@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Munaza Ashraf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Munaza Ashraf — Applied ML Engineer at Runware. Research on efficient world and multimodal models, knowledge distillation, and efficient training and inference for embodied AI.">
+  <meta name="description" content="Munaza Ashraf — Applied ML Engineer at Runware. Research on efficient world models, policy distillation, sparse attention (HASTe), and production-grade training and inference for embodied AI.">
   <style>
     * { box-sizing: border-box; }
     body {
@@ -170,19 +170,20 @@
     <h1>Munaza Ashraf</h1>
     <p class="role">
       Applied ML Engineer<br>
-      <a href="https://runware.ai/">Runware</a>, London, United Kingdom<br>
+      <a href="https://runware.ai/">Runware</a><br>
+      London, United Kingdom<br>
       (Nov 2024&ndash;Present)
     </p>
     <p class="role">
       B.Sc. (Hons.) Software Engineering<br>
       UET Taxila, Pakistan (2020&ndash;2024)<br>
-      CGPA 3.94/4.0 &middot; Silver Medalist
+      CGPA 3.94/4.0<br>
+      Silver Medalist
     </p>
-    <p>munazaashraf1010 [at] gmail [dot] com</p>
+    <p>munazaashraf1010@gmail.com</p>
     <p class="links">
       <a href="assets/cv.pdf">CV</a> |
       <a href="https://github.com/MunazaAshraf10">GitHub</a> |
-      <!-- TODO: verify LinkedIn URL -->
       <a href="https://www.linkedin.com/in/munaza-ashraf/">LinkedIn</a>
     </p>
   </aside>
@@ -203,37 +204,47 @@
 
     <h2 id="about">About Me</h2>
     <p>
-      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a>, London, where I
-      integrate, optimise, and serve image, video, audio, 3D, LLM/VLM, and multimodal models on a
-      platform running 1,000+ models in production. My research interests are efficient world and
-      multimodal models for embodied AI: transferring spatial, temporal, and physical reasoning into
-      compact models through knowledge distillation, and making training and inference efficient under
-      strict latency, memory, and compute constraints. That interest grew directly out of my work at
-      Runware, where reproducing new papers on diffusion caching, attention kernels, context
-      parallelism, distillation, and optimisers on real hardware showed me how large the gap between a
-      published method and a model that runs well in production still is, and how much of it comes
-      down to understanding what each layer of a model is doing at each step.
+      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> (London), where I
+      integrate, optimise, and serve 1,000+ production models spanning image and video generation,
+      3D, speech, LLMs, VLMs, and multimodal pipelines. My day-to-day work sits at the boundary
+      between ML research and systems engineering: I take recent papers&mdash;diffusion caching
+      strategies, attention kernel variants, token-routing schemes, context parallelism, knowledge
+      distillation&mdash;reproduce them on real hardware (H100, H200, B300, RTX PRO 6000), profile
+      end-to-end through CUDA traces and communication-overhead analysis, and ship whatever actually
+      moves latency, throughput, or memory in production.
+    </p>
+    <p>
+      That systems-level understanding is what drives my research interest: <b>efficient world models
+      and policy distillation for embodied AI</b>. I am working on how spatial-temporal reasoning
+      learned by large world models can be compressed into compact policies through online
+      distillation, so the policy runs without the world model at deployment. My implementation of
+      <a href="https://arxiv.org/pdf/2511.20095">WPT</a> with a pretrained OccWorld backbone on
+      nuScenes is the concrete starting point for that line of work. At Runware, I have also applied
+      <a href="https://arxiv.org/pdf/2606.30516">HASTe</a> (Hierarchical Adaptive Sparse
+      Transformers) to production video models (Wan 2.2, LTX 2.3), systematically profiling
+      attention sparsity, memory, and output quality to extract real speed-ups from the method.
     </p>
     <p>
       Alongside Runware, I was a founding engineer of <a href="https://medtalk.co/">MedTalk</a> at
       Faz Australia, a clinical AI product for real-time transcription, clinical notes, and billing
-      that is now used by <b>50,000+ clinicians</b>. Before that I was a Computer Vision Engineer at
-      <a href="https://visionrdai.com/">VisionRD</a>, where I built assembly-line perception systems for Toyota, KIA Motors, and Thal
-      Engineering.
+      now used by <b>50,000+ clinicians</b>. Before that I was a Computer Vision Engineer at
+      <a href="https://visionrdai.com/">VisionRD</a>, where I built assembly-line perception systems
+      deployed for Toyota, KIA Motors, and Thal Engineering.
     </p>
     <p>
       I received my B.Sc. (Hons.) in Software Engineering from the University of Engineering &amp;
-      Technology (UET) Taxila, Pakistan, with a CGPA of <b>3.94/4.0</b> and the <b>Silver Medal</b>
+      Technology (UET) Taxila with a CGPA of <b>3.94/4.0</b> and the <b>Silver Medal</b>
       for the second-highest aggregate in my session across all four years.
     </p>
 
     <h2 id="news">News</h2>
     <ul class="news">
-      <li><span class="date">09/2026</span> Released <b>world-to-policy-distillation</b>, an open implementation of WPT (World-to-Policy Transfer) using a pretrained OccWorld model to distil a lightweight autonomous-driving policy (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</li>
+      <li><span class="date">09/2026</span> Released <b>world-to-policy-distillation</b>, an open implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> (World-to-Policy Transfer) using a pretrained OccWorld model to distil a lightweight autonomous-driving policy (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</li>
+      <li><span class="date">09/2026</span> Applied <a href="https://arxiv.org/pdf/2606.30516">HASTe</a> (Hierarchical Adaptive Sparse Transformers) to Wan 2.2 and LTX 2.3 at Runware, profiling attention sparsity patterns, VRAM usage, and communication overhead across multi-GPU setups to extract production-ready speed-ups.</li>
       <li><span class="date">08/2026</span> Completed <b>Padelytix</b>: multi-camera player and ball tracking, clothing-based re-identification, court homography, and automatic rally/highlight extraction for padel matches.</li>
       <li><span class="date">07/2026</span> Launched the Runware <b>LoRA/QLoRA training platform</b> (<a href="https://runware.ai/lora-training">runware.ai/lora-training</a>), training around 2&times; faster than Replicate, fal, and WaveSpeed.</li>
       <li><span class="date">07/2025</span> <b>MedTalk</b> reaches 50,000+ clinicians; speech pipeline latency cut from ~150&nbsp;ms to ~50&nbsp;ms P50.</li>
-      <li><span class="date">11/2024</span> Joined <b>Runware</b> (London) as a Machine Learning Engineer, Applied ML Research.</li>
+      <li><span class="date">11/2024</span> Joined <b>Runware</b> (London) as an Applied ML Engineer.</li>
       <li><span class="date">09/2024</span> Joined Faz Australia as a founding engineer of <b>MedTalk</b>.</li>
     </ul>
     <details class="see-more">
@@ -301,7 +312,9 @@
             other categories with calibrated confidences so every generated asset is labelled correctly and the
             platform stays safe.</li>
           <li>Benchmark models across H100, H200, B300, and RTX PRO 6000 and across PyTorch, CUDA/cuDNN, and
-            llama.cpp, including FlashAttention 2/3/4, SageAttention, and sparse attention, to pick the best
+            llama.cpp, including FlashAttention 2/3/4, SageAttention, and sparse attention. Profiled with
+            Nsight Compute and Nsight Systems&mdash;per-kernel latency, roofline analysis, L2 cache
+            behaviour, and NCCL communication overhead in parallel configs&mdash;to select the optimal
             configuration per model and hardware.</li>
           <li>Serve LLM/VLM workloads with vLLM behind a Go microservice layer, and support high-volume
             enterprise customers such as Higgsfield, Freepik, Wix, and Mayflower on throughput, concurrency,
@@ -344,14 +357,37 @@
           <li class="authors"><b>Munaza Ashraf</b></li>
           <li>
             <span class="venue">Independent research implementation, 2026.</span>
-            <span class="plinks"><a href="https://arxiv.org/abs/2511.20095">WPT paper</a> | <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a></span>
+            <span class="plinks"><a href="https://arxiv.org/pdf/2511.20095">WPT paper</a> | <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a></span>
           </li>
-          <li>WPT distils the planning knowledge of a world model into a small policy that runs on its own at
-            deployment. I implemented the method with a frozen pretrained OccWorld as the world model on
-            nuScenes: a teacher that plans over predicted future occupancy, a world-reward model, and policy
-            and reward distillation into a lightweight student. The staged, test-covered build (35 tests,
-            reproducibility reports) is the concrete starting point for my research on compact world models
-            for embodied AI.</li>
+          <li>Research implementation of World-to-Policy Transfer using a pretrained OccWorld model for
+            lightweight autonomous driving policy distillation. WPT distils the planning knowledge of a
+            world model into a compact policy network that runs independently at deployment, eliminating
+            the world model from the inference loop entirely. I implemented the full pipeline on nuScenes:
+            a frozen OccWorld teacher that plans over predicted future occupancy grids, a world-reward
+            model that scores planned trajectories, and staged policy and reward distillation into a
+            lightweight student. The build includes 35 unit tests with reproducibility reports, controlled
+            ablation configs, and profiling of the distillation bottleneck&mdash;specifically, the
+            communication overhead between the teacher's rollout and the student's gradient updates&mdash;to
+            understand where wall-clock time is spent during online distillation.</li>
+        </ul>
+      </li>
+      <li>
+        <span class="title">HASTe: Hierarchical Adaptive Sparse Transformers for Video Generation (Wan 2.2 &amp; LTX 2.3)</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li>
+            <span class="venue">Runware, 2026.</span>
+            <span class="plinks"><a href="https://arxiv.org/pdf/2606.30516">HASTe paper</a></span>
+          </li>
+          <li>Applied HASTe's hierarchical adaptive sparse attention to production video models&mdash;Wan
+            2.2 and LTX 2.3&mdash;at Runware. HASTe exploits the observation that attention in video
+            diffusion transformers is naturally sparse across spatial and temporal axes, and adaptively
+            prunes low-contribution tokens at each layer. I profiled the method end-to-end on H100 and
+            H200: CUDA kernel traces for attention compute and memory, per-layer sparsity ratios, NCCL
+            communication overhead in multi-GPU configurations, and VRAM high-water marks at each
+            denoising step. The profiling identified which layers tolerate aggressive sparsity without
+            perceptible quality loss and which are quality-critical, enabling a per-model sparsity schedule
+            that delivers real inference speed-ups in production without degrading output fidelity.</li>
         </ul>
       </li>
       <li>
@@ -363,9 +399,12 @@
             <span class="plinks"><a href="https://arxiv.org/abs/2411.19108">TeaCache</a> | <a href="https://arxiv.org/abs/2506.09045">MagCache</a></span>
           </li>
           <li>Diffusion models recompute nearly identical features across neighbouring denoising steps. I
-            implemented and compared the main caching methods on Runware's image, video, and 3D models,
-            measuring speed-up against output quality on H100, H200, and B300, and selected the best method
-            per model family for production.</li>
+            implemented and benchmarked the main caching methods&mdash;FBCache, TeaCache, MagCache,
+            Cache-DiT, Fast3D Cache, and sam3g&mdash;on Runware's image, video, and 3D models across
+            H100, H200, and B300. For each method I profiled per-step CUDA kernel time, peak VRAM,
+            cache hit rates, and output-quality metrics (FID, CLIP score, LPIPS) to build a
+            speed&ndash;quality Pareto front per model family, then selected the dominant method for
+            production deployment.</li>
         </ul>
       </li>
       <li>
@@ -460,9 +499,14 @@
           <ul class="meta">
             <li class="authors"><b>Munaza Ashraf</b></li>
             <li><span class="venue">Runware, 2025&ndash;2026.</span></li>
-            <li>Compared attention implementations across H100, H200, B300, and RTX PRO 6000 and across PyTorch,
-              CUDA/cuDNN, and llama.cpp backends, measuring latency, memory, and output quality to choose the
-              right kernel for each model and GPU.</li>
+            <li>Systematic comparison of attention implementations across H100, H200, B300, and RTX PRO 6000
+              and across PyTorch, CUDA/cuDNN, and llama.cpp backends. I profiled each kernel with Nsight
+              Compute and Nsight Systems, measuring per-kernel latency, peak VRAM, arithmetic intensity
+              against roofline bounds, L2 cache hit rates, and NCCL communication overhead in tensor-parallel
+              and context-parallel configurations. The study covered sequence lengths from 1K to 128K tokens
+              and batch sizes from 1 to 64, mapping out the crossover points where each kernel becomes
+              compute- or memory-bound. The results directly inform which kernel ships per model and GPU
+              in Runware's production fleet.</li>
           </ul>
         </li>
       </ul>
@@ -471,9 +515,10 @@
     <h2 id="projects">Projects</h2>
     <ul>
       <li><b>World-to-Policy Distillation for Autonomous Driving, 2026</b><br>
-        Research implementation of WPT (World-to-Policy Transfer via Online World Model Distillation) using a
-        pretrained OccWorld world model to distil a lightweight driving policy that needs no world model at
-        deployment. <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">Code on GitHub</a>.</li>
+        Research implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> (World-to-Policy Transfer via Online World Model Distillation) using a
+        pretrained OccWorld world model to distil a lightweight driving policy that runs without the world
+        model at deployment. Includes staged distillation, world-reward scoring, profiling of the teacher-student
+        communication bottleneck, and 35 tests with reproducibility reports. <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">Code on GitHub</a>.</li>
       <li><b>Multimodal Model Inference &amp; Optimization Platform, Runware, 2024&ndash;Present</b><br>
         A unified execution layer that runs image, video, audio, 3D, LLM/VLM, and multimodal models on shared
         GPUs with routing, batching, streaming, hot-swapping, and VRAM-aware scheduling. New architectures and
@@ -524,10 +569,21 @@
 
     <h2 id="activities">Technical Community &amp; Leadership</h2>
     <ul>
-      <li>Google Developer Student Club, UET Taxila &ndash; Active Member, 2020&ndash;2024</li>
-      <li>Microsoft Learn Student Ambassadors &ndash; Active Member, 2020&ndash;2024</li>
-      <li>IEEE, UET Taxila Chapter &ndash; Event Host, 2020&ndash;2024</li>
-      <li>Umeed-e-Subh, UET Taxila &ndash; General Secretary, 2020&ndash;2024</li>
+      <li><b>Google Developer Student Club (GDSC), UET Taxila &ndash; Active Member, 2020&ndash;2024</b><br>
+        Helped organise workshops and tech talks on machine learning, cloud, and mobile development.
+        Led hands-on sessions on TensorFlow, Firebase, and Flutter for the campus developer community.</li>
+      <li><b>Microsoft Learn Student Ambassadors (MLSA) &ndash; Active Member, 2020&ndash;2024</b><br>
+        Co-organised technical talks and study jams around Azure, ML, and open-source tooling.
+        Mentored peers on building and deploying ML projects using Microsoft's cloud stack.</li>
+      <li><b>IEEE, UET Taxila Chapter &ndash; Event Host, 2020&ndash;2024</b><br>
+        Hosted technical seminars and panel sessions connecting students with industry professionals
+        in AI, embedded systems, and software engineering.</li>
+      <li><b>Umeed-e-Subh, UET Taxila &ndash; General Secretary, 2020&ndash;2024</b><br>
+        A student-run welfare community that established a school right across from UET Taxila
+        for underprivileged children in the surrounding area. As General Secretary, I helped organise
+        daily classes and ran an evening IT drive where we taught children practical, income-relevant
+        skills&mdash;graphic design, basic coding, and video editing&mdash;so they could start
+        earning while still in school.</li>
     </ul>
 
     <h2 id="skills">Technical Skills</h2>
