@@ -229,6 +229,7 @@
 
     <h2 id="news">News</h2>
     <ul class="news">
+      <li><span class="date">09/2026</span> Released <b>world-to-policy-distillation</b>, an open implementation of WPT (World-to-Policy Transfer) using a pretrained OccWorld model to distil a lightweight autonomous-driving policy (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</li>
       <li><span class="date">08/2026</span> Completed <b>Padelytix</b>: multi-camera player and ball tracking, clothing-based re-identification, court homography, and automatic rally/highlight extraction for padel matches.</li>
       <li><span class="date">07/2026</span> Launched the Runware <b>LoRA/QLoRA training platform</b> (<a href="https://runware.ai/lora-training">runware.ai/lora-training</a>), training around 2&times; faster than Replicate, fal, and WaveSpeed.</li>
       <li><span class="date">07/2025</span> <b>MedTalk</b> reaches 50,000+ clinicians; speech pipeline latency cut from ~150&nbsp;ms to ~50&nbsp;ms P50.</li>
@@ -337,6 +338,22 @@
 
     <h2 id="research">Research Implementations &amp; Technical Work</h2>
     <ul class="pubs">
+      <li>
+        <span class="title">World-to-Policy Transfer via Online World Model Distillation (WPT) with a Pretrained OccWorld</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li>
+            <span class="venue">Independent research implementation, 2026.</span>
+            <span class="plinks"><a href="https://arxiv.org/abs/2511.20095">WPT paper</a> | <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a></span>
+          </li>
+          <li>WPT distils the planning knowledge of a world model into a small policy that runs on its own at
+            deployment. I implemented the method with a frozen pretrained OccWorld as the world model on
+            nuScenes: a teacher that plans over predicted future occupancy, a world-reward model, and policy
+            and reward distillation into a lightweight student. The staged, test-covered build (35 tests,
+            reproducibility reports) is the concrete starting point for my research on compact world models
+            for embodied AI.</li>
+        </ul>
+      </li>
       <li>
         <span class="title">Diffusion Inference Caching: FBCache, TeaCache, MagCache, Cache-DiT, Fast3D Cache, and sam3g</span>
         <ul class="meta">
@@ -453,6 +470,10 @@
 
     <h2 id="projects">Projects</h2>
     <ul>
+      <li><b>World-to-Policy Distillation for Autonomous Driving, 2026</b><br>
+        Research implementation of WPT (World-to-Policy Transfer via Online World Model Distillation) using a
+        pretrained OccWorld world model to distil a lightweight driving policy that needs no world model at
+        deployment. <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">Code on GitHub</a>.</li>
       <li><b>Multimodal Model Inference &amp; Optimization Platform, Runware, 2024&ndash;Present</b><br>
         A unified execution layer that runs image, video, audio, 3D, LLM/VLM, and multimodal models on shared
         GPUs with routing, batching, streaming, hot-swapping, and VRAM-aware scheduling. New architectures and
