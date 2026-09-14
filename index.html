@@ -1,0 +1,541 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Munaza Ashraf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Munaza Ashraf — Machine Learning Engineer (Applied ML Research) at Runware. Research on efficient world and multimodal models, knowledge distillation, and efficient training and inference for embodied AI.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #fff;
+      color: #333;
+      font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    a { color: #1a73a7; text-decoration: none; }
+    a:hover { color: #0d4f75; text-decoration: underline; }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      width: 240px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 2.5rem;
+      text-align: center;
+    }
+    .sidebar img.profile {
+      width: 200px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+    }
+    .sidebar h1 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #222;
+      margin: 0 0 0.75rem;
+    }
+    .sidebar p { margin: 0 0 0.75rem; font-size: 0.88rem; color: #555; }
+    .sidebar .role { color: #333; }
+    .sidebar .links { font-size: 0.88rem; line-height: 2; }
+    /* ---------- Main ---------- */
+    .main { flex: 1; min-width: 0; }
+    .main h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #222;
+      margin: 2.2rem 0 0.9rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid #e5e5e5;
+      scroll-margin-top: 3.2rem;
+    }
+    .main h2:first-child { margin-top: 0; }
+    /* In-page section nav */
+    .site-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.15rem 1.35rem;
+      margin: 0 0 1.6rem;
+      padding: 0.65rem 0;
+      border-top: 1px solid #e5e5e5;
+      border-bottom: 1px solid #e5e5e5;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
+    }
+    .site-nav a {
+      color: #444;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+    }
+    .site-nav a:hover { color: #1a73a7; text-decoration: underline; }
+    .venue { color: #b03030; font-weight: 600; font-style: italic; }
+    /* News */
+    ul.news { list-style: none; padding: 0; margin: 0; }
+    ul.news li { margin-bottom: 0.45rem; padding-left: 5.2em; text-indent: -5.2em; }
+    ul.news .date { display: inline-block; width: 5.2em; text-indent: 0; color: #888; font-variant-numeric: tabular-nums; }
+    /* Service appointments */
+    ul.service { list-style: none; padding: 0; margin: 0; }
+    ul.service li { margin-bottom: 0.55rem; }
+    .badge {
+      display: inline-block;
+      padding: 0.12em 0.5em;
+      margin: 0.1em 0.15em 0.1em 0;
+      border-radius: 3px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #fff;
+      vertical-align: middle;
+    }
+    .badge-reviewer { background: #c9a227; }
+    .badge-journal { background: #2e7d4f; }
+    .badge-volunteer { background: #b03030; }
+    /* Publications — text-only list (Sanghyuk Chun style) */
+    ul.pubs {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.5rem;
+    }
+    ul.pubs > li {
+      margin-bottom: 1.15rem;
+      padding-bottom: 1.05rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    ul.pubs > li:last-child { border-bottom: none; padding-bottom: 0; }
+    ul.pubs .title { font-weight: 600; color: #222; }
+    ul.pubs .meta {
+      list-style: none;
+      padding: 0.2rem 0 0;
+      margin: 0;
+    }
+    ul.pubs .meta li { margin-bottom: 0.1rem; }
+    ul.pubs .authors b { font-weight: 600; }
+    ul.pubs .plinks { font-size: 0.92rem; }
+    /* See more (details/summary, same pattern as Sanghyuk Chun) */
+    details.see-more { margin: 0.6rem 0 1rem; }
+    details.see-more > summary {
+      cursor: pointer;
+      color: #1a73a7;
+      font-weight: 600;
+      list-style: none;
+      user-select: none;
+    }
+    details.see-more > summary::-webkit-details-marker { display: none; }
+    details.see-more > summary::before { content: "▸ "; }
+    details.see-more[open] > summary::before { content: "▾ "; }
+    details.see-more > summary:hover { color: #0d4f75; text-decoration: underline; }
+    details.see-more ul.news,
+    details.see-more ul.pubs { margin-top: 0.75rem; }
+    /* Generic lists */
+    .main ul { padding-left: 1.2rem; margin: 0 0 1rem; }
+    .main ul li { margin-bottom: 0.3rem; }
+    .main h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      margin: 1.2rem 0 0.5rem;
+    }
+    footer {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 3rem;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+    }
+    /* ---------- Responsive ---------- */
+    @media (max-width: 760px) {
+      .container { flex-direction: column; gap: 1.5rem; }
+      .sidebar { position: static; width: 100%; }
+      .site-nav { gap: 0.35rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ================= Sidebar ================= -->
+  <aside class="sidebar">
+    <img class="profile" src="assets/img/munazaashraf.jpg" alt="Munaza Ashraf">
+    <h1>Munaza Ashraf</h1>
+    <p class="role">
+      Machine Learning Engineer &ndash; Applied ML Research<br>
+      <a href="https://runware.ai/">Runware</a>, London, United Kingdom<br>
+      (Nov 2024&ndash;Present)
+    </p>
+    <p class="role">
+      B.Sc. (Hons.) Software Engineering<br>
+      UET Taxila, Pakistan (2020&ndash;2024)<br>
+      CGPA 3.94/4.0 &middot; Silver Medalist
+    </p>
+    <p>munazaashraf1010 [at] gmail [dot] com</p>
+    <p class="links">
+      <a href="assets/cv.pdf">CV</a> |
+      <a href="https://github.com/munazaashraf">GitHub</a> |
+      <!-- TODO: verify LinkedIn URL -->
+      <a href="https://www.linkedin.com/in/munaza-ashraf/">LinkedIn</a>
+    </p>
+  </aside>
+
+  <!-- ================= Main ================= -->
+  <main class="main">
+
+    <nav class="site-nav" aria-label="Page sections">
+      <a href="#news">News</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#projects">Projects</a>
+      <a href="#awards">Awards</a>
+      <a href="#activities">Activities</a>
+      <a href="#skills">Skills</a>
+    </nav>
+
+    <h2 id="about">About Me</h2>
+    <p>
+      I am a Machine Learning Engineer on the Applied ML Research team at
+      <a href="https://runware.ai/">Runware</a>, London, where I integrate, optimise, and serve
+      image, video, audio, 3D, LLM/VLM, and multimodal models in production. My research direction is
+      developing efficient world and multimodal models for embodied AI, with a focus on transferring
+      spatial, temporal, and physical reasoning into compact models through knowledge distillation and
+      efficient training and inference under strict latency, memory, and compute constraints.
+      I am currently applying for a <b>Master's by Research</b> in machine learning
+      (University of Melbourne, University of Sydney, and Monash University).
+    </p>
+    <p>
+      At Runware I work at the boundary between recent papers and production systems: I read new
+      work on diffusion caching, attention kernels, context parallelism, distillation, and optimisers,
+      reproduce it, and turn it into inference and training improvements across a platform serving
+      1,000+ models. Previously, I was a founding engineer of
+      <a href="https://medtalk.co/">MedTalk</a> at Faz Australia, a Computer Vision Engineer at
+      VisionRD, and a machine learning intern at NESCOM and Bytewise.
+    </p>
+    <p>
+      I received my B.Sc. (Hons.) in Software Engineering from the University of Engineering &amp;
+      Technology (UET) Taxila, Pakistan, with a CGPA of <b>3.94/4.0</b> and the <b>Silver Medal</b>
+      (second-highest aggregate in the session across all four years). Before university, I completed
+      my HSSC (Pre-Engineering) on a full tuition-fee waiver with a stipend awarded for my
+      Matriculation results, ranked first in Pre-Engineering in 11th grade, and was awarded a laptop
+      under the Prime Minister's Laptop Scheme for top-performing students.
+    </p>
+
+    <h2 id="news">News</h2>
+    <ul class="news">
+      <li><span class="date">08/2026</span> Completed the <b>Padelytix</b> multi-camera sports perception pipeline and the Runware <b>content-safety classification model</b>.</li>
+      <li><span class="date">07/2026</span> Multi-architecture <b>LoRA/QLoRA training platform</b> launched at Runware (<a href="https://runware.ai/lora-training">runware.ai/lora-training</a>).</li>
+      <li><span class="date">05/2026</span> Shipped the Go-based <b>vLLM microservice platform</b> at Runware.</li>
+      <li><span class="date">02/2026</span> Deployed the automated <b>lumber takeoff and cost-estimation</b> pipeline as a FastAPI cloud service.</li>
+      <li><span class="date">11/2024</span> Joined <b>Runware</b> (London) as a Machine Learning Engineer, Applied ML Research.</li>
+    </ul>
+    <details class="see-more">
+      <summary>See older news</summary>
+      <ul class="news">
+        <li><span class="date">09/2024</span> Joined Faz Australia as a founding engineer of <b>MedTalk</b>.</li>
+        <li><span class="date">06/2024</span> Graduated from <b>UET Taxila</b> with a Silver Medal and CGPA 3.94/4.0.</li>
+        <li><span class="date">06/2024</span> Joined <b>VisionRD</b> as a Computer Vision Engineer.</li>
+        <li><span class="date">03/2023</span> Started as a Machine Learning Intern at <b>NESCOM</b>, Islamabad.</li>
+        <li><span class="date">05/2022</span> Started as a Deep Learning Intern at <b>Bytewise Limited</b>, Islamabad.</li>
+        <li><span class="date">2020</span> Started my B.Sc. (Hons.) in Software Engineering at <b>UET Taxila</b>.</li>
+      </ul>
+    </details>
+
+    <h2 id="education">Education</h2>
+    <ul class="pubs">
+      <li>
+        <span class="title">University of Engineering &amp; Technology (UET), Taxila, Pakistan</span>
+        <ul class="meta">
+          <li class="authors">Bachelor of Science (Honours) in Software Engineering, 2020&ndash;2024</li>
+          <li><span class="venue">CGPA 3.94/4.0 &middot; Silver Medal (second-highest aggregate in the session across all four years).</span></li>
+          <li><b>Relevant courses:</b> Machine Learning, Artificial Neural Networks, Calculus and Analytical Geometry,
+            Linear Algebra and Differential Equations, Probability and Statistics, Digital Image Processing,
+            Computer Vision, Data Structures &amp; Algorithms, Operating Systems, Database Management Systems,
+            Cloud Computing.</li>
+        </ul>
+      </li>
+      <li>
+        <!-- TODO: fill in college name and years -->
+        <span class="title">Higher Secondary School Certificate (HSSC), Pre-Engineering &ndash; [College name]</span>
+        <ul class="meta">
+          <li class="authors">[Years]</li>
+          <li><span class="venue">Full tuition-fee waiver and monthly stipend, awarded on Matriculation (10th-grade) results.</span></li>
+          <li>Ranked <b>1st in Pre-Engineering</b> in 11th grade; awarded a laptop under the
+            <b>Prime Minister's Laptop Scheme</b> for top-performing students.</li>
+        </ul>
+      </li>
+      <li>
+        <!-- TODO: fill in school name and year -->
+        <span class="title">Matriculation (Secondary School Certificate) &ndash; [School name]</span>
+        <ul class="meta">
+          <li class="authors">[Year]</li>
+          <li>Results earned the full tuition-fee waiver and stipend for HSSC.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>Final Year Project &ndash; PsycheSync: AI-Powered Mental Health and Wellness Platform (2023&ndash;2024)</h3>
+    <ul>
+      <li>Built an AI-driven mHealth platform for mental health support with mood tracking, journaling,
+        and psychological assessments, delivered through a Flutter application with real-time interaction.</li>
+      <li>Started at the moment LLaMA 2 and the GPT-3.5/GPT-4 APIs had just been released. Fine-tuned
+        LLaMA 2 on domain-specific data using <b>self-funded RunPod GPUs</b> and integrated OpenAI language
+        models for empathetic, context-aware responses.</li>
+      <li>Grounded the design in literature research across <b>WHO</b>, <b>PubMed</b>, and <b>Google Scholar</b>.</li>
+      <li>Ran market research via <b>Google Forms</b> distributed to psychiatrists, people living with the
+        conditions, peers, colleagues, friends, and family, asking each to share onward; collected
+        <b>thousands of responses</b> and drafted the thesis from those findings.</li>
+      <li>Designed a semantically controlled community environment with automated moderation for safer
+        user interactions.</li>
+    </ul>
+
+    <h2 id="experience">Experience</h2>
+    <ul>
+      <li><b>Machine Learning Engineer &ndash; Applied ML Research, <a href="https://runware.ai/">Runware</a>, London, UK (Nov 2024&ndash;Present)</b>
+        <ul>
+          <li>Integrate, optimise, and serve image, video, audio, 3D, LLM/VLM, and multimodal models in
+            production, with inference improvements of up to 2&times; across selected workloads; built and
+            optimised inference systems serving 1,000+ models with GPU memory management, model
+            loading/unloading, batching, concurrency control, and workload isolation.</li>
+          <li><b>Research-driven inference optimisation:</b> track and implement the latest papers to get the
+            best out of models &ndash; KV/QK caching for autoregressive models, diffusion caching
+            (<b>FBCache, TeaCache, MagCache, Cache-DiT, Fast3D Cache, sam3g</b>), context parallelism,
+            distributed execution, compilation, quantisation, and GPU-aware scheduling.</li>
+          <li><b>Research-driven training optimisation:</b> combined <b>TREAD</b> token routing with
+            DreamBooth-LoRA for faster fine-tuning and added context-parallel training; studied LoRA
+            optimisers (<b>SOAP, Muon</b>, AdamW, Lion) following <i>SOAP, Muon, and Beyond: Pushing LLM
+            Pretraining Scales</i>, and applied <b>ConsisLoRA</b> for content/style consistency.</li>
+          <li>Train on base models and distil turbo/step-distilled variants from them for best convergence;
+            researched how to minimise the gap between model layers at different timesteps.</li>
+          <li>Implemented <b>segmented (chunked) gradient checkpointing</b> for Flux and MageFlow transformers
+            (contiguous block chunks via <code>checkpoint_sequential_state</code>, a
+            <code>gradient_checkpointing_interval</code> interface, and multi-language docs) for better
+            memory/recompute trade-offs, cache hits, and latency.</li>
+          <li>Trained a <b>content-safety classification model</b> (NSFW, child-safety/underage, gore,
+            terrorism, and other categories) with confidence scores, so every piece of content is labelled
+            correctly and the platform stays safe.</li>
+          <li>Benchmark models across <b>H100, H200, B300, and RTX PRO 6000</b> to study compute, memory, and
+            communication trade-offs across PyTorch, CUDA/cuDNN, the NVIDIA stack, and llama.cpp, including
+            <b>FlashAttention 2/3/4, SageAttention, and sparse attention</b>.</li>
+          <li>vLLM serving and a model-agnostic Go microservice layer; worked with high-volume enterprise
+            workloads including Higgsfield, Freepik, Wix, and Mayflower, focusing on throughput,
+            concurrency, GPU utilisation, and production reliability.</li>
+        </ul>
+      </li>
+      <li><b>Product Engineer (Founding Engineer, MedTalk), Faz Australia (Sep 2024&ndash;Jul 2025)</b>
+        <ul>
+          <li>Founding engineer for <a href="https://medtalk.co/">MedTalk</a>, contributing across machine
+            learning, backend systems, and production ML infrastructure.</li>
+          <li>Fine-tuned and deployed speech, medical NLP, and language models for real-time transcription
+            and structured clinical generation; reduced post-VAD speech-processing latency from
+            ~150&nbsp;ms P50 to ~50&nbsp;ms.</li>
+          <li>Built real-time WebSocket-based inference systems, RAG and multimodal workflows, and deployed
+            ML workloads across AWS and GPU infrastructure.</li>
+        </ul>
+      </li>
+      <li><b>Computer Vision Engineer, VisionRD, Pakistan (Jun 2024&ndash;Nov 2024)</b>
+        <ul>
+          <li>Developed computer vision and generative AI systems for industrial environments.</li>
+          <li>Built automated worker-activity and assembly-validation systems for Thal Engineering and
+            defect-detection systems for KIA Motors to automate visual quality inspection.</li>
+          <li>Built and optimised real-time computer vision pipelines focused on robust, low-latency
+            production inference.</li>
+        </ul>
+      </li>
+      <li><b>Machine Learning Intern, NESCOM, Islamabad (Mar 2023&ndash;Oct 2023)</b><br>
+        Developed an ad detector and classifier system with deep-learning models; worked on signal
+        processing and pattern-recognition tasks with emphasis on accuracy, reliability, and efficient
+        preprocessing.</li>
+      <li><b>Deep Learning Intern, Bytewise Limited, Islamabad (May 2022&ndash;Sep 2022)</b><br>
+        Designed and trained deep-learning models for computer vision and NLP using TensorFlow and PyTorch;
+        built custom datasets and data-augmentation pipelines.</li>
+    </ul>
+
+    <h2 id="research">Research Implementations &amp; Technical Work</h2>
+    <ul class="pubs">
+      <li>
+        <span class="title">Segmented (Chunked) Gradient Checkpointing for Flux and MageFlow Transformers</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li>
+            <span class="venue">Runware, 2026.</span>
+            <span class="plinks">Checkpoints contiguous chunks of blocks (instead of every block or every n-th block)
+              via <code>checkpoint_sequential_state</code>; adds <code>set_gradient_checkpointing_interval</code>
+              to MageFlow to match Flux; documented across all supported languages.</span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="title">TREAD Token Routing with DreamBooth-LoRA and Context-Parallel Training for Faster Diffusion Fine-Tuning</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li>
+            <span class="venue">Runware, 2026.</span>
+            <span class="plinks"><a href="https://arxiv.org/abs/2501.04765">TREAD paper</a></span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="title">Diffusion Inference Caching Study: FBCache, TeaCache, MagCache, Cache-DiT, Fast3D Cache, and sam3g</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li>
+            <span class="venue">Runware, 2025&ndash;2026.</span>
+            <span class="plinks">
+              <a href="https://arxiv.org/abs/2411.19108">TeaCache</a> |
+              <a href="https://arxiv.org/abs/2506.09045">MagCache</a> |
+              benchmarked on H100 / H200 / B300 for latency, VRAM, and output quality.
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="title">Optimiser Study for LoRA Post-Training: SOAP, Muon, AdamW, and Lion</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li>
+            <span class="venue">Runware, 2026.</span>
+            <span class="plinks">
+              Following <i>SOAP, Muon, and Beyond: Pushing LLM Pretraining Scales</i> |
+              <a href="https://arxiv.org/abs/2409.11321">SOAP paper</a>
+            </span>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <span class="title">ConsisLoRA for Content- and Style-Consistent LoRA Style Transfer</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li>
+            <span class="venue">Runware, 2026.</span>
+            <span class="plinks"><a href="https://arxiv.org/abs/2503.10614">ConsisLoRA paper</a></span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <details class="see-more">
+      <summary>See more research work</summary>
+      <ul class="pubs">
+        <li>
+          <span class="title">Base-to-Distilled Convergence: Training on Base Models and Distilling Turbo Variants</span>
+          <ul class="meta">
+            <li class="authors"><b>Munaza Ashraf</b></li>
+            <li>
+              <span class="venue">Runware, 2025&ndash;2026.</span>
+              <span class="plinks">Analysed the gap between model layers at different timesteps to improve
+                convergence of distilled/turbo variants derived from base checkpoints.</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="title">Content-Safety Classification Model with Knowledge Distillation from a Generative Model</span>
+          <ul class="meta">
+            <li class="authors"><b>Munaza Ashraf</b></li>
+            <li>
+              <span class="venue">Runware, 2026.</span>
+              <span class="plinks">NSFW vs. safe, underage/child-safety, gore, terrorism, and other categories with
+                confidence scores; distilled and compressed for production deployment.</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="title">Reverse-Engineering the RVQ Audio Encoder of MiniMax Music 3</span>
+          <ul class="meta">
+            <li class="authors"><b>Munaza Ashraf</b></li>
+            <li>
+              <span class="venue">Runware, 2026.</span>
+              <span class="plinks">Reconstructed the residual vector-quantisation audio encoder to enable
+                integration and inference of the model.</span>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="title">Attention-Kernel Benchmarking: FlashAttention 2/3/4, SageAttention, and Sparse Attention</span>
+          <ul class="meta">
+            <li class="authors"><b>Munaza Ashraf</b></li>
+            <li>
+              <span class="venue">Runware, 2025&ndash;2026.</span>
+              <span class="plinks">Compared kernels across GPUs (H100, H200, B300, RTX PRO 6000) and backends
+                (PyTorch, CUDA/cuDNN, llama.cpp) for compute, memory, and quality trade-offs.</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </details>
+
+    <h2 id="projects">Projects</h2>
+    <ul>
+      <li><b>Multimodal Model Inference &amp; Optimization Platform, Runware, 2024&ndash;Present</b><br>
+        Unified execution layer for image, video, audio, 3D, LLM/VLM, and multimodal architectures with
+        routing, batching, streaming, hot-swapping, and VRAM-aware scheduling; caching, sparse and parallel
+        attention, compilation, and automated profiling.</li>
+      <li><b>Multi-Architecture LoRA/QLoRA Training Platform, Runware, 2026</b><br>
+        Modular LoRA/QLoRA training for diffusion, LLM, and VLM architectures with preprocessing,
+        captioning, checkpointing, validation, adapter evaluation, merging, and production hot-swapping.</li>
+      <li><b>vLLM Microservice Platform in Go, Runware, 2026</b><br>
+        Model-agnostic Go microservice layer exposing JSON APIs for prompt enhancement, image/video
+        captioning, age detection, and multi-category content-safety scoring.</li>
+      <li><b>Content Safety Classification Model, Runware, 2026</b><br>
+        Confidence-scored NSFW and age-related classification with knowledge distillation from a generative model.</li>
+      <li><b>Reverse-Engineering the RVQ Audio Encoder for MiniMax Music 3, Runware, 2026</b><br>
+        Reconstructed the residual vector-quantisation audio encoder for model integration.</li>
+      <li><b>Padelytix &ndash; Real-Time Multi-Camera Sports Perception, 2026</b><br>
+        Player and ball tracking, clothing-based re-identification, court calibration, homography, and
+        rally/highlight extraction from fixed multi-camera footage.</li>
+      <li><b>MedTalk &ndash; Real-Time Multimodal Clinical AI, 2024&ndash;2025</b><br>
+        Low-latency speech and language-model pipelines for live clinical transcription and structured
+        generation (~150&nbsp;ms &rarr; ~50&nbsp;ms P50 post-VAD).</li>
+      <li><b>Unilever &times; PSL 2025 &ndash; Real-Time Broadcast Logo Detection and Sponsorship Analytics, 2025</b><br>
+        YOLOv8/OpenCV pipeline to detect, track, and classify sponsor logos and generate ROI-based exposure reports.</li>
+      <li><b>Automated Lumber Takeoff and Cost Estimation from Construction Drawings, 2025&ndash;2026</b><br>
+        YOLO, SAM, and Detectron2 pipeline with Gemma and Qwen VLMs for semantic interpretation, deployed as a FastAPI service.</li>
+      <li><b>Real-Time Optical Fiber Intrusion Detection using CNN-LSTM, 2024</b><br>
+        FFT/wavelet feature extraction and a CNN-LSTM classifier in a low-latency streaming pipeline with automated alerts.</li>
+      <li><b>PsycheSync &ndash; AI-Powered Mental Health and Wellness Platform (Final Year Project), 2023&ndash;2024</b><br>
+        Fine-tuned LLaMA 2 and OpenAI models, WHO/PubMed/Google Scholar literature research, and thousands of
+        survey responses feeding the thesis.</li>
+    </ul>
+
+    <h2 id="awards">Awards &amp; Honors</h2>
+    <ul>
+      <li>Silver Medal, UET Taxila &ndash; second-highest aggregate in the session across all four years, 2024</li>
+      <!-- TODO: fill in years -->
+      <li>Laptop Award, Prime Minister's Laptop Scheme for top-performing students, Pakistan, [year]</li>
+      <li>1st Position in Pre-Engineering (11th grade), [College name], [year]</li>
+      <li>Full Tuition-Fee Waiver and Stipend for HSSC, awarded on Matriculation results, [year]</li>
+    </ul>
+
+    <h2 id="activities">Technical Community &amp; Leadership</h2>
+    <ul>
+      <li>Google Developer Student Club, UET Taxila &ndash; Active Member, 2020&ndash;2024</li>
+      <li>Microsoft Learn Student Ambassadors &ndash; Active Member, 2020&ndash;2024</li>
+      <li>IEEE, UET Taxila Chapter &ndash; Event Host, 2020&ndash;2024</li>
+      <li>Umeed-e-Subh, UET Taxila &ndash; General Secretary, 2020&ndash;2024</li>
+    </ul>
+
+    <h2 id="skills">Technical Skills</h2>
+    <ul>
+      <li><b>Programming:</b> Python, C++, CUDA, Go, SQL</li>
+      <li><b>Machine Learning:</b> PyTorch, Transformers, Diffusion Models, LLMs, VLMs, Computer Vision, Multimodal AI, LoRA/PEFT</li>
+      <li><b>Training and Inference:</b> Distributed Training and Inference, FSDP, Tensor Parallelism, Context Parallelism, Quantization, Mixed Precision, FlashAttention, SageAttention, KV Caching, PyTorch Compilation</li>
+      <li><b>Model Domains:</b> Image, Video, 3D, Speech, Generative and Multimodal Models</li>
+      <li><b>Systems:</b> vLLM, llama.cpp, FastAPI, Docker, Linux, AWS, RunPod</li>
+      <li><b>Profiling and Evaluation:</b> CUDA Profiling, Latency and Throughput Benchmarking, VRAM and GPU Utilization, Model Quality Evaluation, Experiment Tracking</li>
+    </ul>
+
+    <footer>
+      Layout inspired by <a href="https://sanghyukchun.github.io/home/">Sanghyuk Chun's homepage</a>.
+    </footer>
+
+  </main>
+</div>
+</body>
+</html>
