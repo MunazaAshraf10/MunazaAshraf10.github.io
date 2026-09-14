@@ -81,8 +81,15 @@
     .venue { color: #b03030; font-weight: 600; font-style: italic; }
     /* News */
     ul.news { list-style: none; padding: 0; margin: 0; }
-    ul.news li { margin-bottom: 0.45rem; padding-left: 5.2em; text-indent: -5.2em; }
-    ul.news .date { display: inline-block; width: 5.2em; text-indent: 0; color: #888; font-variant-numeric: tabular-nums; }
+    ul.news li {
+      display: grid;
+      grid-template-columns: 4.7rem minmax(0, 1fr);
+      column-gap: 0.5rem;
+      align-items: start;
+      margin-bottom: 0.45rem;
+    }
+    ul.news .date { color: #888; font-variant-numeric: tabular-nums; }
+    ul.news .news-item { min-width: 0; }
     /* Service appointments */
     ul.service { list-style: none; padding: 0; margin: 0; }
     ul.service li { margin-bottom: 0.55rem; }
@@ -139,6 +146,11 @@
     /* Generic lists */
     .main ul { padding-left: 1.2rem; margin: 0 0 1rem; }
     .main ul li { margin-bottom: 0.3rem; }
+    .main ul.fyp-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .main ul.fyp-list li { margin-bottom: 0.45rem; }
     .main h3 {
       font-size: 1rem;
       font-weight: 600;
@@ -184,7 +196,7 @@
     <p class="links">
       <a href="assets/cv.pdf">CV</a> |
       <a href="https://github.com/MunazaAshraf10">GitHub</a> |
-      <a href="https://www.linkedin.com/in/munaza-ashraf/">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/munaza-ashraf-713625417/">LinkedIn</a>
     </p>
   </aside>
 
@@ -204,32 +216,30 @@
 
     <h2 id="about">About Me</h2>
     <p>
-      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> (London), where I
-      integrate, optimise, and serve 1,000+ production models spanning image and video generation,
-      3D, speech, LLMs, VLMs, and multimodal pipelines. My day-to-day work sits at the boundary
-      between ML research and systems engineering: I take recent papers&mdash;diffusion caching
-      strategies, attention kernel variants, token-routing schemes, context parallelism, knowledge
-      distillation&mdash;reproduce them on real hardware (H100, H200, B300, RTX PRO 6000), profile
-      end-to-end through CUDA traces and communication-overhead analysis, and ship whatever actually
-      moves latency, throughput, or memory in production.
+      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London. I work at
+      the boundary of machine learning research and systems engineering, integrating, optimising, and
+      serving more than 1,000 production models across image, video, 3D, speech, language, vision
+      language, and multimodal workloads. I reproduce promising research on real systems, study it
+      through kernel traces and communication analysis, and turn the results into measurable gains in
+      latency, throughput, and memory use across NVIDIA Hopper and Blackwell GPUs.
     </p>
     <p>
-      That systems-level understanding is what drives my research interest: <b>efficient world models
-      and policy distillation for embodied AI</b>. I am working on how spatial-temporal reasoning
-      learned by large world models can be compressed into compact policies through online
-      distillation, so the policy runs without the world model at deployment. My implementation of
+      My research focuses on <b>efficient world and multimodal models for embodied AI</b>. In
+      particular, I am interested in transferring spatial, temporal, and physical reasoning into
+      compact models through knowledge distillation, while making training and inference practical
+      under strict latency, memory, and compute constraints. My implementation of
       <a href="https://arxiv.org/pdf/2511.20095">WPT</a> with a pretrained OccWorld backbone on
-      nuScenes is the concrete starting point for that line of work. At Runware, I have also applied
-      <a href="https://arxiv.org/pdf/2606.30516">HASTe</a> (Hierarchical Adaptive Sparse
-      Transformers) to production video models (Wan 2.2, LTX 2.3), systematically profiling
-      attention sparsity, memory, and output quality to extract real speed-ups from the method.
+      nuScenes is the concrete starting point for this work: it explores how a capable world model can
+      teach a lightweight policy that no longer needs the world model at deployment. This research is
+      informed by my production work on sparse attention, diffusion caching, quantisation, distributed
+      execution, and hardware aware kernel selection.
     </p>
     <p>
       Alongside Runware, I was a founding engineer of <a href="https://medtalk.co/">MedTalk</a> at
       Faz Australia, a clinical AI product for real-time transcription, clinical notes, and billing
       now used by <b>50,000+ clinicians</b>. Before that I was a Computer Vision Engineer at
       <a href="https://visionrdai.com/">VisionRD</a>, where I built assembly-line perception systems
-      deployed for Toyota, KIA Motors, and Thal Engineering.
+      deployed for Toyota and Thal Engineering.
     </p>
     <p>
       I received my B.Sc. (Hons.) in Software Engineering from the University of Engineering &amp;
@@ -239,21 +249,23 @@
 
     <h2 id="news">News</h2>
     <ul class="news">
-      <li><span class="date">09/2026</span> Released <b>world-to-policy-distillation</b>, an open implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> (World-to-Policy Transfer) using a pretrained OccWorld model to distil a lightweight autonomous-driving policy (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</li>
-      <li><span class="date">09/2026</span> Applied <a href="https://arxiv.org/pdf/2606.30516">HASTe</a> (Hierarchical Adaptive Sparse Transformers) to Wan 2.2 and LTX 2.3 at Runware, profiling attention sparsity patterns, VRAM usage, and communication overhead across multi-GPU setups to extract production-ready speed-ups.</li>
-      <li><span class="date">08/2026</span> Completed <b>Padelytix</b>: multi-camera player and ball tracking, clothing-based re-identification, court homography, and automatic rally/highlight extraction for padel matches.</li>
-      <li><span class="date">07/2026</span> Launched the Runware <b>LoRA/QLoRA training platform</b> (<a href="https://runware.ai/lora-training">runware.ai/lora-training</a>), training around 2&times; faster than Replicate, fal, and WaveSpeed.</li>
-      <li><span class="date">07/2025</span> <b>MedTalk</b> reaches 50,000+ clinicians; speech pipeline latency cut from ~150&nbsp;ms to ~50&nbsp;ms P50.</li>
-      <li><span class="date">11/2024</span> Joined <b>Runware</b> (London) as an Applied ML Engineer.</li>
-      <li><span class="date">09/2024</span> Joined Faz Australia as a founding engineer of <b>MedTalk</b>.</li>
+      <li><span class="date">09/2026</span><span class="news-item">Released <b>world to policy distillation</b>, an open implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> using a pretrained OccWorld model to distil a lightweight autonomous driving policy (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</span></li>
+      <li><span class="date">08/2026</span><span class="news-item">Started implementing WPT with a pretrained OccWorld backbone on nuScenes.</span></li>
+      <li><span class="date">08/2026</span><span class="news-item">Reverse engineered the RVQ audio encoder released with <a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">MiniMax Music 3</a> for production integration.</span></li>
+      <li><span class="date">08/2026</span><span class="news-item">Completed <b>Padelytix</b>, combining multicamera player and ball tracking, clothing based reidentification, court homography, and automatic rally and highlight extraction.</span></li>
+      <li><span class="date">07/2026</span><span class="news-item">Completed work on Runware's <b>LoRA and QLoRA training platform</b> after developing it from March through July (<a href="https://runware.ai/lora-training">platform</a>).</span></li>
+      <li><span class="date">07/2025</span><span class="news-item"><b>MedTalk</b> reached more than 50,000 clinicians, with speech pipeline latency reduced from about 150&nbsp;ms to 50&nbsp;ms at P50.</span></li>
+      <li><span class="date">03/2025</span><span class="news-item">Implemented <a href="https://arxiv.org/abs/2502.21079">HASTE</a> soon after publication and evaluated adaptive sparse attention for production video diffusion.</span></li>
+      <li><span class="date">11/2024</span><span class="news-item">Joined <b>Runware</b> in London as an Applied ML Engineer.</span></li>
+      <li><span class="date">09/2024</span><span class="news-item">Joined Faz Australia as a founding engineer of <b>MedTalk</b>.</span></li>
     </ul>
     <details class="see-more">
       <summary>See older news</summary>
       <ul class="news">
-        <li><span class="date">09/2024</span> Built the Wearable-AI assembly copilot for <b>Toyota</b> at <a href="https://visionrdai.com/">VisionRD</a>.</li>
-        <li><span class="date">06/2024</span> Landed my first computer vision role at <b><a href="https://visionrdai.com/">VisionRD</a></b>.</li>
-        <li><span class="date">06/2024</span> Graduated from <b>UET Taxila</b> with the Silver Medal and a CGPA of 3.94/4.0.</li>
-        <li><span class="date">09/2020</span> Started my B.Sc. (Hons.) in Software Engineering at <b>UET Taxila</b>.</li>
+        <li><span class="date">09/2024</span><span class="news-item">Built the Wearable AI assembly copilot for <b>Toyota</b> at <a href="https://visionrdai.com/">VisionRD</a>.</span></li>
+        <li><span class="date">06/2024</span><span class="news-item">Joined <b><a href="https://visionrdai.com/">VisionRD</a></b> in my first computer vision role.</span></li>
+        <li><span class="date">06/2024</span><span class="news-item">Graduated from <b>UET Taxila</b> with the Silver Medal and a CGPA of 3.94/4.0.</span></li>
+        <li><span class="date">09/2020</span><span class="news-item">Started my B.Sc. (Hons.) in Software Engineering at <b>UET Taxila</b>.</span></li>
       </ul>
     </details>
 
@@ -273,7 +285,7 @@
     </ul>
 
     <h3>Final Year Project &ndash; PsycheSync: AI-Powered Mental Health and Wellness Platform (2023&ndash;2024)</h3>
-    <ul>
+    <ul class="fyp-list">
       <li>An AI-driven mental health platform with mood tracking, journaling, psychological assessments, and a
         conversational assistant, delivered as a Flutter app with real-time interaction.</li>
       <li>Started right when LLaMA 2 and the GPT-3.5/GPT-4 APIs were released. I fine-tuned LLaMA 2 on
@@ -308,14 +320,16 @@
           <li>Designed segmented gradient checkpointing for Flux and MageFlow transformers: checkpointing
             contiguous chunks of blocks instead of every block gives a much finer memory-versus-recompute
             trade-off, better cache hits, and lower step latency during training.</li>
-          <li>Trained the platform's content-safety classifier, scoring NSFW, underage, gore, terrorism, and
-            other categories with calibrated confidences so every generated asset is labelled correctly and the
-            platform stays safe.</li>
-          <li>Benchmark models across H100, H200, B300, and RTX PRO 6000 and across PyTorch, CUDA/cuDNN, and
-            llama.cpp, including FlashAttention 2/3/4, SageAttention, and sparse attention. Profiled with
-            Nsight Compute and Nsight Systems&mdash;per-kernel latency, roofline analysis, L2 cache
-            behaviour, and NCCL communication overhead in parallel configs&mdash;to select the optimal
-            configuration per model and hardware.</li>
+          <li>Fine tuned a compact vision transformer from <a href="https://huggingface.co/Freepik/nsfw_image_detector">Freepik's NSFW image detector</a>
+            to return confidence scores for platform safety categories, including graded sexual content,
+            suspected minor sexualisation, graphic violence, and extremist content, with subsecond inference
+            for request level moderation.</li>
+          <li>Built hardware aware execution paths across NVIDIA Hopper and Blackwell GPUs, AMD GPUs through
+            ROCm, and CPU fallback. Benchmarked native scaled dot product attention, FlashAttention,
+            SageAttention, and FlashInfer, then selected implementations by architecture and workload because
+            the fastest kernel changes with hardware, masks, sequence shape, and precision.</li>
+          <li>Worked across CUDA, ROCm, CUTLASS, CuTe, cuDNN, and NCCL; profiled kernel latency, memory traffic,
+            cache behaviour, and collective communication to guide model and hardware specific optimisation.</li>
           <li>Serve LLM/VLM workloads with vLLM behind a Go microservice layer, and support high-volume
             enterprise customers such as Higgsfield, Freepik, Wix, and Mayflower on throughput, concurrency,
             and reliability.</li>
@@ -342,8 +356,7 @@
             Toyota: a head-mounted camera streaming up to 4K at 30 fps, real-time detection of assembly
             errors, and cycle analysis that compares each worker against expert benchmarks, cutting rework
             and improving line efficiency by about 35%.</li>
-          <li>Built automated worker-activity and assembly-validation systems for Thal Engineering and visual
-            defect-detection systems for KIA Motors.</li>
+          <li>Built automated worker activity and assembly validation systems for Thal Engineering.</li>
           <li>Optimised the pipelines for robust, low-latency inference on factory hardware.</li>
         </ul>
       </li>
@@ -372,22 +385,18 @@
         </ul>
       </li>
       <li>
-        <span class="title">HASTe: Hierarchical Adaptive Sparse Transformers for Video Generation (Wan 2.2 &amp; LTX 2.3)</span>
+        <span class="title">HASTE: Training Free and Adaptive Sparse Attention for Efficient Long Video Generation</span>
         <ul class="meta">
           <li class="authors"><b>Munaza Ashraf</b></li>
           <li>
-            <span class="venue">Runware, 2026.</span>
-            <span class="plinks"><a href="https://arxiv.org/pdf/2606.30516">HASTe paper</a></span>
+            <span class="venue">Runware, 2025.</span>
+            <span class="plinks"><a href="https://arxiv.org/abs/2502.21079">HASTE paper</a></span>
           </li>
-          <li>Applied HASTe's hierarchical adaptive sparse attention to production video models&mdash;Wan
-            2.2 and LTX 2.3&mdash;at Runware. HASTe exploits the observation that attention in video
-            diffusion transformers is naturally sparse across spatial and temporal axes, and adaptively
-            prunes low-contribution tokens at each layer. I profiled the method end-to-end on H100 and
-            H200: CUDA kernel traces for attention compute and memory, per-layer sparsity ratios, NCCL
-            communication overhead in multi-GPU configurations, and VRAM high-water marks at each
-            denoising step. The profiling identified which layers tolerate aggressive sparsity without
-            perceptible quality loss and which are quality-critical, enabling a per-model sparsity schedule
-            that delivers real inference speed-ups in production without degrading output fidelity.</li>
+          <li>Implemented HASTE soon after its February 2025 publication and evaluated it on production video
+            diffusion workloads. The method combines a training free sparse attention design with an offline
+            profiling stage and online, head adaptive search over hierarchical block sparse patterns. I traced
+            attention compute and memory, measured sparsity by layer and head, and evaluated the latency and
+            quality tradeoff to identify safe operating points for each workload.</li>
         </ul>
       </li>
       <li>
@@ -401,7 +410,7 @@
           <li>Diffusion models recompute nearly identical features across neighbouring denoising steps. I
             implemented and benchmarked the main caching methods&mdash;FBCache, TeaCache, MagCache,
             Cache-DiT, Fast3D Cache, and sam3g&mdash;on Runware's image, video, and 3D models across
-            H100, H200, and B300. For each method I profiled per-step CUDA kernel time, peak VRAM,
+            NVIDIA Hopper and Blackwell GPUs. For each method I profiled per step CUDA kernel time, peak VRAM,
             cache hit rates, and output-quality metrics (FID, CLIP score, LPIPS) to build a
             speed&ndash;quality Pareto front per model family, then selected the dominant method for
             production deployment.</li>
@@ -412,7 +421,7 @@
         <ul class="meta">
           <li class="authors"><b>Munaza Ashraf</b></li>
           <li>
-            <span class="venue">Runware, 2026.</span>
+            <span class="venue">Runware, March&ndash;July 2026.</span>
             <span class="plinks"><a href="https://arxiv.org/abs/2501.04765">TREAD</a></span>
           </li>
           <li>TREAD skips most tokens through the middle of the transformer during training without hurting
@@ -426,7 +435,7 @@
         <ul class="meta">
           <li class="authors"><b>Munaza Ashraf</b></li>
           <li>
-            <span class="venue">Runware, 2026.</span>
+            <span class="venue">Runware, March&ndash;July 2026.</span>
             <span class="plinks"><a href="https://arxiv.org/abs/2409.11321">SOAP</a></span>
           </li>
           <li>Following <i>SOAP, Muon, and Beyond: Pushing LLM Pretraining Scales</i>, I ran controlled
@@ -440,7 +449,7 @@
         <ul class="meta">
           <li class="authors"><b>Munaza Ashraf</b></li>
           <li>
-            <span class="venue">Runware, 2026.</span>
+            <span class="venue">Runware, March&ndash;July 2026.</span>
             <span class="plinks"><a href="https://arxiv.org/abs/2503.10614">ConsisLoRA</a></span>
           </li>
           <li>Style LoRAs often leak the reference image's content or lose the style. I implemented ConsisLoRA's
@@ -459,6 +468,23 @@
             for both Flux and MageFlow with documentation in every supported language.</li>
         </ul>
       </li>
+      <li>
+        <span class="title">Distributed, Sparse, and Multimodal Attention Systems</span>
+        <ul class="meta">
+          <li class="authors"><b>Munaza Ashraf</b></li>
+          <li><span class="venue">Research study and production engineering, 2025&ndash;2026.</span>
+            <span class="plinks"><a href="https://arxiv.org/abs/2310.01889">Ring Attention</a> |
+              <a href="https://arxiv.org/abs/2407.02490">MInference 1.0</a> |
+              <a href="https://arxiv.org/abs/2502.11089">Native Sparse Attention</a> |
+              <a href="https://docs.vllm.ai/en/latest/features/multimodal_inputs.html">vLLM multimodal inputs</a> |
+              <a href="https://github.com/NVIDIA/nccl">NCCL</a></span></li>
+          <li>Studied exact context parallel attention through circulating key and value blocks, dynamic sparse
+            patterns for long context prefill, and hardware aligned hierarchical sparsity learned during
+            training. Applied these ideas to multimodal serving with text, image, audio, and video inputs,
+            collective communication, and mixed precision execution using FP8, FP4, INT8, and INT4 where
+            supported by the model and hardware.</li>
+        </ul>
+      </li>
     </ul>
 
     <details class="see-more">
@@ -475,38 +501,40 @@
           </ul>
         </li>
         <li>
-          <span class="title">Content-Safety Classification with Knowledge Distillation</span>
+          <span class="title">Low Latency Content Safety Classification</span>
           <ul class="meta">
             <li class="authors"><b>Munaza Ashraf</b></li>
             <li><span class="venue">Runware, 2026.</span></li>
-            <li>Trained a classifier that separates safe from NSFW content and flags underage, gore, terrorism,
-              and other categories with confidence scores, then distilled a compact version from a larger
-              generative model so it runs cheaply on every request.</li>
+            <li>Fine tuned <a href="https://huggingface.co/Freepik/nsfw_image_detector">Freepik's EVA based vision transformer</a>
+              for a production moderation taxonomy covering neutral and graded sexual content, suspected minor
+              sexualisation, graphic violence, and extremist content. The model returns per category confidence
+              scores and runs in under one second, making it small enough to evaluate every request. This work
+              used supervised fine tuning, not knowledge distillation.</li>
           </ul>
         </li>
         <li>
           <span class="title">Reverse-Engineering the RVQ Audio Encoder of MiniMax Music 3</span>
           <ul class="meta">
             <li class="authors"><b>Munaza Ashraf</b></li>
-            <li><span class="venue">Runware, 2026.</span></li>
-            <li>Reconstructed the residual vector-quantisation audio encoder used by MiniMax Music 3 from its
+            <li><span class="venue">Runware, August 2026.</span>
+              <span class="plinks"><a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">model</a></span></li>
+            <li>Reconstructed the residual vector quantisation audio encoder used by MiniMax Music 3 from its
               released components and behaviour, which made it possible to integrate and serve the model on
               Runware's infrastructure.</li>
           </ul>
         </li>
         <li>
-          <span class="title">Attention-Kernel Benchmarking: FlashAttention 2/3/4, SageAttention, and Sparse Attention</span>
+          <span class="title">Hardware Aware Attention and Inference Kernel Selection</span>
           <ul class="meta">
             <li class="authors"><b>Munaza Ashraf</b></li>
             <li><span class="venue">Runware, 2025&ndash;2026.</span></li>
-            <li>Systematic comparison of attention implementations across H100, H200, B300, and RTX PRO 6000
-              and across PyTorch, CUDA/cuDNN, and llama.cpp backends. I profiled each kernel with Nsight
-              Compute and Nsight Systems, measuring per-kernel latency, peak VRAM, arithmetic intensity
-              against roofline bounds, L2 cache hit rates, and NCCL communication overhead in tensor-parallel
-              and context-parallel configurations. The study covered sequence lengths from 1K to 128K tokens
-              and batch sizes from 1 to 64, mapping out the crossover points where each kernel becomes
-              compute- or memory-bound. The results directly inform which kernel ships per model and GPU
-              in Runware's production fleet.</li>
+            <li>Built device capability based selection for NVIDIA Hopper and Blackwell, AMD ROCm, and CPU
+              fallback, routing workloads among native PyTorch attention, FlashAttention, SageAttention,
+              cuDNN attention, and architecture specific implementations. Integrated FlashInfer for mixture
+              of experts inference and worked with CUDA, ROCm, CUTLASS, CuTe, and NCCL. Profiling showed that
+              kernel choice is workload and architecture dependent, including cases where SageAttention is
+              faster on Blackwell than FlashAttention 2. The resulting policy avoids unsupported paths and
+              chooses a practical latency and memory tradeoff per model and device.</li>
           </ul>
         </li>
       </ul>
@@ -523,8 +551,8 @@
         A unified execution layer that runs image, video, audio, 3D, LLM/VLM, and multimodal models on shared
         GPUs with routing, batching, streaming, hot-swapping, and VRAM-aware scheduling. New architectures and
         inference strategies plug in without touching the core orchestration.</li>
-      <li><b>Multi-Architecture LoRA/QLoRA Training Platform, Runware, 2026</b><br>
-        Modular LoRA/QLoRA training for diffusion, LLM, and VLM models with dataset preprocessing, captioning,
+      <li><b>Multi Architecture LoRA and QLoRA Training Platform, Runware, March&ndash;July 2026</b><br>
+        Modular LoRA and QLoRA training for diffusion, LLM, and VLM models with dataset preprocessing, captioning,
         checkpointing, validation, and adapter evaluation, plus dynamic loading, merging, and weighted
         composition of adapters in production. Trains around 2&times; faster than Replicate, fal, and WaveSpeed.</li>
       <li><b>vLLM Microservice Platform in Go, Runware, 2026</b><br>
@@ -532,10 +560,11 @@
         captioning, age detection, and content-safety scoring, with per-model inference recipes, Docker
         packaging, and Prometheus observability.</li>
       <li><b>Content Safety Classification Model, Runware, 2026</b><br>
-        A confidence-scored classifier for NSFW and age-related content, distilled from a larger generative
-        model, that gates every generation on the platform.</li>
-      <li><b>Reverse-Engineering the RVQ Audio Encoder for MiniMax Music 3, Runware, 2026</b><br>
-        Reconstructed the residual vector-quantisation encoder so the music model could be integrated and served.</li>
+        Fine tuned a compact EVA based vision transformer from <a href="https://huggingface.co/Freepik/nsfw_image_detector">Freepik's detector</a>
+        to return confidence scores for a production safety taxonomy in under one second.</li>
+      <li><b>Reverse Engineering the RVQ Audio Encoder for MiniMax Music 3, Runware, August 2026</b><br>
+        Reconstructed the residual vector quantisation encoder so the music model could be integrated and
+        served. <a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">Model on Hugging Face</a>.</li>
       <li><b>Padelytix &ndash; Real-Time Multi-Camera Sports Perception, 2026</b><br>
         A video analytics pipeline for padel: player and ball tracking, clothing-based re-identification, court
         calibration and homography, and rally/highlight extraction from fixed multi-camera footage, built to
@@ -590,9 +619,9 @@
     <ul>
       <li><b>Programming:</b> Python, C++, CUDA, Go, SQL</li>
       <li><b>Machine Learning:</b> PyTorch, Transformers, Diffusion Models, LLMs, VLMs, Computer Vision, Multimodal AI, LoRA/PEFT</li>
-      <li><b>Training and Inference:</b> Distributed Training and Inference, FSDP, Tensor Parallelism, Context Parallelism, Quantization, Mixed Precision, FlashAttention, SageAttention, KV Caching, PyTorch Compilation</li>
+      <li><b>Training and Inference:</b> Distributed Training and Inference, FSDP, Tensor Parallelism, Context Parallelism, Quantization, FP8, FP4, INT8, INT4, Mixed Precision, FlashAttention, FlashInfer, SageAttention, Ring Attention, Sparse Attention, KV Caching, PyTorch Compilation</li>
       <li><b>Model Domains:</b> Image, Video, 3D, Speech, Generative and Multimodal Models</li>
-      <li><b>Systems:</b> vLLM, llama.cpp, FastAPI, Docker, Linux, AWS, RunPod</li>
+      <li><b>Systems:</b> CUDA, ROCm, CUTLASS, CuTe, cuDNN, NCCL, vLLM, llama.cpp, FastAPI, Docker, Linux, AWS, RunPod</li>
       <li><b>Profiling and Evaluation:</b> CUDA Profiling, Latency and Throughput Benchmarking, VRAM and GPU Utilization, Model Quality Evaluation, Experiment Tracking</li>
     </ul>
 
