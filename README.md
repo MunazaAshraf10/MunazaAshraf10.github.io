@@ -1,4 +1,4 @@
-# munazaashraf.github.io
+# munaza-ashraf.github.io
 
 Personal portfolio site for Munaza Ashraf — a single static `index.html` (inline CSS, no build step).
 
