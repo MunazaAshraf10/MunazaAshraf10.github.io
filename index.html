@@ -379,13 +379,14 @@
             <span class="venue">Independent implementation, August&ndash;September 2026.</span>
             <span class="plinks"><a href="https://arxiv.org/pdf/2511.20095">WPT paper</a> | <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a></span>
           </li>
-          <li>Implemented the paper from scratch, as it has no official reference code. A frozen pretrained
-            OccWorld predicts future occupancy, a teacher proposes candidate trajectories, and a learned reward
-            model scores imitation and simulation signals; policy query distillation and world reward
-            distillation then transfer that guidance into a lightweight student that runs without the world
-            model at deployment. The codebase is staged, with a pinned OccWorld submodule, a frozen world model
-            adapter with explicit interface contracts, a nuScenes sample loader, a verification CLI, unit and
-            integration tests, and documentation mapping each module to the paper.</li>
+          <li>WPT asks whether the spatial and temporal reasoning of a large driving world model can be
+            transferred into a compact policy that never calls the world model at inference. I implemented the
+            paper from scratch, as it has no official reference code, on a frozen pretrained OccWorld with
+            nuScenes. The world model rolls out future occupancy, a teacher policy proposes candidate
+            trajectories, and a learned reward model scores them against imitation and simulation signals;
+            policy query distillation and world reward distillation then compress that guidance online into a
+            lightweight student. This is the concrete starting point for my work on distilling world model
+            reasoning into policies that run under strict latency and compute budgets.</li>
         </ul>
       </li>
       <li>
