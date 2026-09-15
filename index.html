@@ -226,8 +226,8 @@
       from the current literature, including diffusion caching, sparse attention, token routing,
       quantization, distillation, and whatever else the architecture calls for, to address those
       bottlenecks. Because these methods interact, and combining them rarely yields the sum of their
-      individual gains, much of my work is designing controlled experiments on NVIDIA Hopper and Blackwell
-      GPUs to find the combination that delivers the largest end-to-end speed-up with no loss in output
+      individual gains, much of my work is designing controlled experiments across data centre and workstation
+      NVIDIA GPUs, from Hopper and Blackwell to Ada generation cards, to find the combination that delivers the largest end-to-end speed-up with no loss in output
       quality.
     </p>
     <p>
@@ -397,7 +397,7 @@
             <span class="plinks"><a href="https://arxiv.org/abs/2411.19108">TeaCache</a> | <a href="https://arxiv.org/abs/2506.09045">MagCache</a></span>
           </li>
           <li>Implemented and benchmarked the main diffusion caching methods on image, video, and 3D models across
-            NVIDIA Hopper and Blackwell, profiling per step kernel time, peak VRAM, and FID, CLIP score, SSIM, and LPIPS
+            NVIDIA GPU generations, profiling per step kernel time, peak VRAM, and FID, CLIP score, SSIM, and LPIPS
             to build a speed versus quality Pareto front per model family.</li>
         </ul>
       </li>
