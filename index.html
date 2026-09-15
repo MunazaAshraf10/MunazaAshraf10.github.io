@@ -541,6 +541,12 @@
         model, and policy query and world reward distillation that compress that guidance into a compact
         student policy which runs without the world model at deployment.
         <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">Code on GitHub</a>.</li>
+      <li><b>Context Parallel Inference for MiniMax Music 3 and LTX, Runware, 2026</b><br>
+        Scaled long sequence generation across multiple GPUs by implementing Ulysses and Ring Ulysses
+        hybrid sequence parallelism for the attention layers of MiniMax Music 3 and LTX video, splitting
+        the sequence across devices, overlapping NCCL communication with compute, and profiling collective
+        overhead to choose the parallel layout per model and GPU count. Built a LoRA trainer for MiniMax
+        Music 3 on the same sharded execution path so fine tuning and inference share one memory model.</li>
       <li><b>Multimodal Model Inference &amp; Optimization Platform, Runware, 2024&ndash;Present</b><br>
         A unified execution layer that runs image, video, audio, 3D, LLM/VLM, and multimodal models on shared
         GPUs with routing, batching, streaming, hot swapping, and VRAM aware scheduling. New architectures and
@@ -579,9 +585,6 @@
       <li><b>Real Time Optical Fiber Intrusion Detection, 2024</b><br>
         FFT and wavelet features from optical fibre pulse data feeding a CNN LSTM classifier in a low latency
         streaming pipeline with automated alerts.</li>
-      <li><b>PsycheSync &ndash; AI Powered Mental Health Platform (Final Year Project), 2023&ndash;2024</b><br>
-        Fine tuned LLaMA 2 and OpenAI models behind a Flutter app, grounded in WHO/PubMed literature and
-        thousands of survey responses.</li>
     </ul>
 
     <h2 id="awards">Awards &amp; Honors</h2>
