@@ -309,8 +309,8 @@
             evaluation, deployment, and automatic image captioning.</li>
           <li>Evaluated <b>TREAD token routing</b>, context parallel training, SOAP, Muon, AdamW, and Lion optimisers,
             and ConsisLoRA for training efficiency and style consistency.</li>
-          <li>Train on base models and <b>distil turbo variants</b>, closing the representation gap across timesteps so
-            distilled models converge faster and match base quality.</li>
+          <li>Train LoRAs on base models and <b>transfer them to distilled and turbo variants</b>, closing the
+            representation gap across timesteps so adapters work across all three without retraining.</li>
           <li>Designed <b>segmented gradient checkpointing</b> for Flux and MageFlow, giving a finer memory versus
             recompute tradeoff and lower step latency.</li>
           <li>Fine tuned a compact vision transformer from <a href="https://huggingface.co/Freepik/nsfw_image_detector">Freepik's NSFW detector</a>
@@ -466,12 +466,13 @@
       <summary>See more research work</summary>
       <ul class="pubs">
         <li>
-          <span class="title">Training on Base Models and Distilling Turbo Variants</span>
+          <span class="title">Transferring LoRAs Between Base, Distilled, and Turbo Models</span>
           <ul class="meta">
             <li><span class="venue">Runware, 2025&ndash;2026.</span></li>
-            <li>Few step models commit to global structure earlier than base models, so adapters trained on one
-              are unreliable on the other. Trained on the base, transferred to the distilled variant, and froze the
-              layers whose representations diverged most, making LoRAs usable in both directions.</li>
+            <li>Distilled and turbo models commit to global structure earlier than base models, so adapters trained
+              on one are unreliable on the others. Trained on the base, transferred to the distilled and turbo
+              variants, and froze the layers whose representations diverged most, making LoRAs usable across all
+              three.</li>
           </ul>
         </li>
         <li>
