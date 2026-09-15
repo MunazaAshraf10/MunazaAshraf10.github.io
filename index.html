@@ -384,7 +384,7 @@
           <li>Implemented HASTE for Wan 2.2 and LTX 2.3 soon after publication. Temporal mask reuse skips mask
             prediction when query and key drift is small, and error guided budgeted calibration sets per head
             top-p thresholds under a global sparsity budget. Profiled sparsity by layer and head and the latency
-            versus quality tradeoff to pick safe operating points per production model.</li>
+            versus quality tradeoff with SSIM, LPIPS, and CLIP score to pick safe operating points per production model.</li>
         </ul>
       </li>
       <li>
@@ -395,7 +395,7 @@
             <span class="plinks"><a href="https://arxiv.org/abs/2411.19108">TeaCache</a> | <a href="https://arxiv.org/abs/2506.09045">MagCache</a></span>
           </li>
           <li>Implemented and benchmarked the main diffusion caching methods on image, video, and 3D models across
-            NVIDIA Hopper and Blackwell, profiling per step kernel time, peak VRAM, and FID, CLIP score, and LPIPS
+            NVIDIA Hopper and Blackwell, profiling per step kernel time, peak VRAM, and FID, CLIP score, SSIM, and LPIPS
             to build a speed versus quality Pareto front per model family.</li>
         </ul>
       </li>
@@ -569,7 +569,7 @@
       <li><b>Training and Inference:</b> Distributed Training and Inference, FSDP, DTensor, Tensor Parallelism, Context Parallelism, Quantization, FP8, FP4, INT8, INT4, Mixed Precision, FlashAttention, FlashInfer, SageAttention, Ring Attention, Sparse Attention, KV Caching, PyTorch Compilation</li>
       <li><b>Model Domains:</b> Image, Video, 3D, Speech, Generative and Multimodal Models</li>
       <li><b>Systems:</b> CUDA, ROCm, Triton, CUTLASS, CuTe, cuDNN, NCCL, vLLM, llama.cpp, ONNX Runtime, FastAPI, Docker, Kubernetes, Linux, AWS, RunPod, Git</li>
-      <li><b>Profiling and Evaluation:</b> Nsight Systems, Nsight Compute, CUDA Profiling, Latency and Throughput Benchmarking, Memory and GPU Utilization, Model Quality Evaluation, Experiment Tracking</li>
+      <li><b>Profiling and Evaluation:</b> Nsight Systems, Nsight Compute, CUDA Profiling, Latency and Throughput Benchmarking, Memory and GPU Utilization, Model Quality Evaluation (FID, CLIP Score, SSIM, PSNR, LPIPS), Experiment Tracking</li>
     </ul>
 
 
