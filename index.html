@@ -219,36 +219,33 @@
 
     <h2 id="about">About Me</h2>
     <p>
-      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London, where I work on
+      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London, working on
       efficient training and inference across a production platform serving 1,000+ models spanning
-      generative media (image, video, audio, and 3D), LLMs, and multimodal foundation models. My work is a continuous cycle of analysing model
-      architectures to locate where compute and memory are spent, and translating ideas from the
-      literature, such as diffusion caching, sparse attention, token routing, quantization, and
-      distillation, into measurable gains on production models, whether applied individually or combined
-      to extract the maximum speed-up a given architecture allows. I am particularly interested in how these
-      methods interact: their gains are often non-additive when combined, so identifying combinations that
-      reduce end-to-end latency without degrading quality requires careful profiling and controlled
+      generative media (image, video, audio, and 3D), LLMs, and multimodal foundation models. I analyse
+      model architectures to find where compute and memory go, then translate ideas from the literature,
+      such as diffusion caching, sparse attention, token routing, quantization, and distillation, into
+      measurable gains, individually or combined. Their gains are often non-additive, so finding combinations
+      that cut end-to-end latency without degrading quality takes careful profiling and controlled
       experimentation on NVIDIA Hopper and Blackwell GPUs.
     </p>
     <p>
-      This systems work has led me to a broader research question: how can the spatial, temporal, and
-      physical reasoning capabilities of large multimodal and world models be transferred into models that
-      operate under the constraints of embodied systems? My research interest is therefore
-      <b>efficient world and multimodal models for embodied AI</b>, with a focus on knowledge distillation
-      into compact policies and on training and inference under strict latency, memory, and compute
-      budgets. The concrete starting point for this work is my independent implementation of
-      <a href="https://arxiv.org/pdf/2511.20095">WPT</a>, adapted to run on a frozen pretrained OccWorld
-      with nuScenes rather than the paper's Drive-OccWorld. The same instinct to take a method past the
-      setting it was published in runs through my work at Runware, where I implemented
+      This work has led me to a broader research question: how can the spatial, temporal, and physical
+      reasoning of large multimodal and world models be transferred into models that operate under the
+      constraints of embodied systems? My research interest is therefore <b>efficient world and multimodal
+      models for embodied AI</b>, with a focus on knowledge distillation into compact policies under strict
+      latency, memory, and compute budgets. Its concrete starting point is my independent implementation of
+      <a href="https://arxiv.org/pdf/2511.20095">WPT</a>, adapted to a frozen pretrained OccWorld with
+      nuScenes rather than the paper's Drive-OccWorld. The same instinct to take a method past its published
+      setting runs through my Runware work, where I implemented
       <a href="https://arxiv.org/abs/2605.14513v1">HASTE</a> sparse attention for production video models
-      such as Wan 2.2 and LTX 2.3 and profiled how far its gains carry over.
+      such as Wan 2.2 and LTX 2.3.
     </p>
     <p>
       Previously, I was a founding engineer at <a href="https://medtalk.co/">MedTalk</a>, a clinical AI
       platform used by <b>50,000+ clinicians</b>, and a Computer Vision Engineer at
-      <a href="https://visionrdai.com/">VisionRD</a>, where I developed industrial perception systems for
-      Toyota and Thal Engineering. I graduated from UET Taxila with a B.Sc. (Hons.) in Software Engineering,
-      a <b>3.94/4.00</b> CGPA, and the <b>Silver Medal</b>.
+      <a href="https://visionrdai.com/">VisionRD</a>, building industrial perception systems for Toyota and
+      Thal Engineering. I graduated from UET Taxila with a B.Sc. (Hons.) in Software Engineering, a
+      <b>3.94/4.00</b> CGPA, and the <b>Silver Medal</b>.
     </p>
 
     <h2 id="news">News</h2>
@@ -286,17 +283,13 @@
     <h3>Final Year Project &ndash; PsycheSync: AI Powered Mental Health and Wellness Platform (2023&ndash;2024)</h3>
     <div class="fyp-list">
       <p>An AI driven mental health platform with mood tracking, journaling, psychological assessments, and a
-        conversational assistant, delivered as a Flutter app with real time interaction.</p>
-      <p>Started right when LLaMA 2 and the GPT-3.5/GPT-4 APIs were released. I fine tuned LLaMA 2 on
-        domain specific mental health data on <b>self funded RunPod GPUs</b> and integrated OpenAI models for
-        empathetic, context aware responses.</p>
-      <p>Grounded the design in guidance and research from the <b>World Health Organization</b>, the
-        <b>National Institute of Mental Health</b>, the <b>American Psychological Association</b>, and
-        studies indexed by <b>PubMed</b> and <b>Google Scholar</b>.
-        Complemented that evidence with surveys shared through psychiatrists, people with lived experience,
-        students, colleagues, friends, and families, gathering <b>thousands of responses</b> that shaped the thesis.</p>
-      <p>Designed a semantically moderated community space that encouraged peer support while identifying
-        unsafe content and directing high risk situations toward appropriate professional help.</p>
+        conversational assistant, delivered as a Flutter app. Fine tuned LLaMA 2 on domain specific mental
+        health data on <b>self funded RunPod GPUs</b> and integrated OpenAI models for empathetic, context aware
+        responses.</p>
+      <p>Grounded the design in guidance from the <b>WHO</b>, <b>NIMH</b>, and <b>APA</b> and literature indexed by
+        <b>PubMed</b>, complemented by surveys of psychiatrists, people with lived experience, and students that
+        gathered <b>thousands of responses</b>. Included a semantically moderated peer support space that flagged
+        unsafe content and directed high risk situations to professional help.</p>
     </div>
 
     <h2 id="experience">Experience</h2>
@@ -343,6 +336,24 @@
             benchmarks, improving line efficiency by about 35%.</li>
           <li>Built automated worker activity and assembly validation systems for Thal Engineering, optimised
             for low latency inference on factory hardware.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3 id="internships">Internships</h3>
+    <ul>
+      <li><b>Machine Learning Intern, NESCOM, Islamabad, Pakistan (Mar 2023&ndash;Oct 2023)</b>
+        <ul>
+          <li>Built an ad detection and classification system with deep learning models, from data collection
+            and preprocessing to feature engineering and evaluation.</li>
+          <li>Worked on signal processing and pattern recognition tasks with a focus on model accuracy and
+            reliable preprocessing.</li>
+        </ul>
+      </li>
+      <li><b>Deep Learning Intern, Bytewise Limited, Islamabad, Pakistan (May 2022&ndash;Sep 2022)</b>
+        <ul>
+          <li>Designed and trained computer vision and NLP models in TensorFlow and PyTorch, building custom
+            datasets and augmentation pipelines for classification and detection tasks.</li>
         </ul>
       </li>
     </ul>
@@ -539,20 +550,15 @@
     <h2 id="activities">Technical Community &amp; Leadership</h2>
     <ul>
       <li><b>Google Developer Student Club (GDSC), UET Taxila &ndash; Active Member, 2020&ndash;2024</b><br>
-        Helped organise workshops and tech talks on machine learning, cloud, and mobile development.
-        Led hands on sessions on TensorFlow, Firebase, and Flutter for the campus developer community.</li>
+        Organised workshops and led hands on sessions on TensorFlow, Firebase, and Flutter.</li>
       <li><b>Microsoft Learn Student Ambassadors (MLSA) &ndash; Active Member, 2020&ndash;2024</b><br>
-        Co organised technical talks and study jams around Azure, ML, and open source tooling.
-        Mentored peers on building and deploying ML projects using Microsoft's cloud stack.</li>
+        Co organised talks and study jams on Azure and ML and mentored peers on deploying ML projects.</li>
       <li><b>IEEE, UET Taxila Chapter &ndash; Event Host, 2020&ndash;2024</b><br>
-        Hosted technical seminars and panel sessions connecting students with industry professionals
-        in AI, embedded systems, and software engineering.</li>
+        Hosted seminars and panels connecting students with industry professionals in AI and software.</li>
       <li><b>Umeed-e-Subh, UET Taxila &ndash; General Secretary, 2020&ndash;2024</b><br>
-        A student run welfare community that established a school right across from UET Taxila
-        for underprivileged children in the surrounding area. As General Secretary, I helped organise
-        daily classes and ran an evening IT drive where we taught children practical, income relevant
-        skills in graphic design, basic coding, and video editing so they could start
-        earning while still in school.</li>
+        Student run welfare community that established a school for underprivileged children across from
+        UET Taxila. Helped run daily classes and an evening IT drive teaching graphic design, basic coding,
+        and video editing so children could earn while still in school.</li>
     </ul>
 
     <h2 id="skills">Technical Skills</h2>
