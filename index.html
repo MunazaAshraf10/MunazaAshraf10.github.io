@@ -309,8 +309,9 @@
             evaluation, deployment, and automatic image captioning.</li>
           <li>Evaluated <b>TREAD token routing</b>, context parallel training, SOAP, Muon, AdamW, and Lion optimisers,
             and ConsisLoRA for training efficiency and style consistency.</li>
-          <li>Train LoRAs on base models and <b>transfer them to distilled and turbo variants</b>, closing the
-            representation gap across timesteps so adapters work across all three without retraining.</li>
+          <li>Train LoRAs once on the base model and <b>deploy them on base, distilled, and turbo variants</b> by
+            finding the transformer layers with the highest variance or modulation shift between variants and
+            skipping or bridging them so the adapter converges well on every variant.</li>
           <li>Designed <b>segmented gradient checkpointing</b> for Flux and MageFlow, giving a finer memory versus
             recompute tradeoff and lower step latency.</li>
           <li>Fine tuned a compact vision transformer from <a href="https://huggingface.co/Freepik/nsfw_image_detector">Freepik's NSFW detector</a>
@@ -466,13 +467,14 @@
       <summary>See more research work</summary>
       <ul class="pubs">
         <li>
-          <span class="title">Transferring LoRAs Between Base, Distilled, and Turbo Models</span>
+          <span class="title">Train Once on Base: LoRAs That Transfer to Distilled and Turbo Variants</span>
           <ul class="meta">
             <li><span class="venue">Runware, 2025&ndash;2026.</span></li>
-            <li>Distilled and turbo models commit to global structure earlier than base models, so adapters trained
-              on one are unreliable on the others. Trained on the base, transferred to the distilled and turbo
-              variants, and froze the layers whose representations diverged most, making LoRAs usable across all
-              three.</li>
+            <li>Distilled and turbo variants commit to global structure earlier than the base model, so a LoRA
+              trained on one usually degrades on the others. I measured per layer representation variance and
+              modulation shift between variants, then excluded or bridged the layers that diverge most during
+              training on the base model, so a single LoRA converges well and deploys on base, distilled, and
+              turbo variants without retraining.</li>
           </ul>
         </li>
         <li>
