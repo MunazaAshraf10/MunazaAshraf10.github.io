@@ -236,10 +236,10 @@
       temporal, and physical reasoning of large world models into compact policies through knowledge
       distillation. The goal is to retain useful world knowledge without carrying the full world model
       at deployment, making intelligent agents faster and more practical on constrained hardware. As a
-      first concrete study in this direction, I am independently implementing
+      first concrete study in this direction, I independently implemented
       <a href="https://arxiv.org/pdf/2511.20095">WPT</a> from the paper on top of a frozen pretrained
-      OccWorld and nuScenes, starting from a verified world model adapter and building the teacher,
-      reward model, and distillation stages on it.
+      OccWorld and nuScenes, covering the world model adapter, teacher, reward model, and the policy query
+      and world reward distillation stages.
       At Runware I have also applied <a href="https://arxiv.org/abs/2605.14513v1">HASTE</a>, head wise
       adaptive sparse attention for video diffusion, to production video models such as Wan 2.2 and LTX 2.3,
       profiling attention sparsity, memory, and output quality to extract real speed ups from the method.
@@ -260,7 +260,7 @@
 
     <h2 id="news">News</h2>
     <ul class="news">
-      <li><span class="date">09/2026</span><span class="news-item">Published the first stage of an independent <a href="https://arxiv.org/pdf/2511.20095">WPT</a> implementation: a verified frozen OccWorld adapter, nuScenes sample loader, and tests, with the distillation stages in progress (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</span></li>
+      <li><span class="date">09/2026</span><span class="news-item">Released an independent implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> from the paper on a frozen pretrained OccWorld with nuScenes, including the teacher, reward model, and distillation stages (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</span></li>
       <li><span class="date">08/2026</span><span class="news-item">Started implementing WPT from the paper to study online world model distillation for compact autonomous driving policies.</span></li>
       <li><span class="date">08/2026</span><span class="news-item">Collaborated independently with <a href="https://github.com/bghira">bghira</a> of SimpleTuner to reverse engineer an <a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">open RVQ encoder for MiniMax Music 3</a>.</span></li>
       <li><span class="date">08/2026</span><span class="news-item">Completed <b>Padelytix</b>, combining multicamera player and ball tracking, clothing based reidentification, court homography, and automatic rally and highlight extraction.</span></li>
@@ -374,21 +374,19 @@
     <h2 id="research">Research Reproductions &amp; Engineering Studies</h2>
     <ul class="pubs">
       <li>
-        <span class="title">Implementing WPT: World to Policy Transfer via Online World Model Distillation</span>
+        <span class="title">Independent Implementation of WPT: World to Policy Transfer via Online World Model Distillation</span>
         <ul class="meta">
           <li>
-            <span class="venue">Independent implementation in progress, August 2026&ndash;present.</span>
+            <span class="venue">Independent implementation, August&ndash;September 2026.</span>
             <span class="plinks"><a href="https://arxiv.org/pdf/2511.20095">WPT paper</a> | <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a></span>
           </li>
-          <li>A staged implementation of the paper, which has no official reference code. In WPT a frozen
-            pretrained world model predicts future occupancy, a teacher proposes candidate trajectories, and a
-            learned reward model scores imitation and simulation signals; policy query distillation and world
-            reward distillation then transfer that guidance into a lightweight student that runs without the
-            world model at deployment. Stage 1 is complete: a pinned OccWorld submodule, a frozen world model
-            adapter with explicit interface contracts, a nuScenes sample loader, a verification CLI, 35 passing
-            unit and integration tests, and documentation mapping each module to the paper. The teacher,
-            student, reward model, and distillation losses are the next stages, and no reproduction metrics
-            are claimed until they are trained.</li>
+          <li>Implemented the paper from scratch, as it has no official reference code. A frozen pretrained
+            OccWorld predicts future occupancy, a teacher proposes candidate trajectories, and a learned reward
+            model scores imitation and simulation signals; policy query distillation and world reward
+            distillation then transfer that guidance into a lightweight student that runs without the world
+            model at deployment. The codebase is staged, with a pinned OccWorld submodule, a frozen world model
+            adapter with explicit interface contracts, a nuScenes sample loader, a verification CLI, unit and
+            integration tests, and documentation mapping each module to the paper.</li>
         </ul>
       </li>
       <li>
@@ -554,10 +552,10 @@
     <h2 id="projects">Projects</h2>
     <ul>
       <li><b>World-to-Policy Distillation for Autonomous Driving, 2026</b><br>
-        Staged, in progress implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> from the
-        paper on a frozen pretrained OccWorld with nuScenes. Stage 1 delivers the verified world model
-        adapter, sample loader, verification CLI, and tests; the teacher policy, reward model, and policy
-        query and world reward distillation stages follow.
+        Independent implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> from the paper on a
+        frozen pretrained OccWorld with nuScenes: world model adapter, sample loader, teacher policy, reward
+        model, and the policy query and world reward distillation stages, with a verification CLI, tests, and
+        documentation mapping each module to the paper.
         <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">Code on GitHub</a>.</li>
       <li><b>Multimodal Model Inference &amp; Optimization Platform, Runware, 2024&ndash;Present</b><br>
         A unified execution layer that runs image, video, audio, 3D, LLM/VLM, and multimodal models on shared
