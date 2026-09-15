@@ -381,8 +381,7 @@
           </li>
           <li>WPT asks whether the spatial and temporal reasoning of a large driving world model can be
             transferred into a compact policy that never calls the world model at inference. I implemented the
-            paper from scratch, as it has no official reference code, on a frozen pretrained OccWorld with
-            nuScenes. The world model rolls out future occupancy, a teacher policy proposes candidate
+            paper on a frozen pretrained OccWorld with nuScenes. The world model rolls out future occupancy, a teacher policy proposes candidate
             trajectories, and a learned reward model scores them against imitation and simulation signals;
             policy query distillation and world reward distillation then compress that guidance online into a
             lightweight student. This is the concrete starting point for my work on distilling world model
@@ -396,21 +395,13 @@
             <span class="venue">Runware, May 2026.</span>
             <span class="plinks"><a href="https://arxiv.org/abs/2605.14513v1">paper</a></span>
           </li>
-          <li>Applied the method to Wan 2.2 and LTX 2.3 soon after its May 2026 publication, which did not provide a
-            reference implementation. HASTE is training free and works on top of existing top-p sparse attention
+          <li>Applied HASTE to Wan 2.2 and LTX 2.3 soon after its May 2026 publication to cut video generation
+            latency without retraining. HASTE is training free and works on top of existing top-p sparse attention
             such as XAttention and SVG2. Temporal mask reuse skips mask prediction when query and key drift across
             denoising steps is small, and error guided budgeted calibration assigns per head top-p thresholds by
             minimising measured output error under a global sparsity budget, where the paper reports up to 1.93&times;
             speed up at 720p on Wan 2.1. I traced attention compute and memory, measured sparsity by layer and head,
             and evaluated the latency and quality tradeoff to identify safe operating points for each production model.</li>
-        </ul>
-      </li>
-          <li>Reproduced the method soon after its February 2025 publication, which did not provide an official
-            reference implementation, and evaluated it on production video
-            diffusion workloads. The method combines a training free sparse attention design with an offline
-            profiling stage and online, head adaptive search over hierarchical block sparse patterns. I traced
-            attention compute and memory, measured sparsity by layer and head, and evaluated the latency and
-            quality tradeoff to identify safe operating points for each workload.</li>
         </ul>
       </li>
       <li>
