@@ -543,10 +543,10 @@
     <h2 id="projects">Projects</h2>
     <ul>
       <li><b>World-to-Policy Distillation for Autonomous Driving, 2026</b><br>
-        Independent implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> from the paper on a
-        frozen pretrained OccWorld with nuScenes: world model adapter, sample loader, teacher policy, reward
-        model, and the policy query and world reward distillation stages, with a verification CLI, tests, and
-        documentation mapping each module to the paper.
+        Independent implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a> on a frozen
+        pretrained OccWorld with nuScenes: a teacher policy guided by world model rollouts, a learned reward
+        model, and policy query and world reward distillation that compress that guidance into a compact
+        student policy which runs without the world model at deployment.
         <a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">Code on GitHub</a>.</li>
       <li><b>Multimodal Model Inference &amp; Optimization Platform, Runware, 2024&ndash;Present</b><br>
         A unified execution layer that runs image, video, audio, 3D, LLM/VLM, and multimodal models on shared
