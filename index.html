@@ -221,12 +221,12 @@
     <p>
       I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London, working on
       efficient training and inference across a production platform serving 1,000+ models spanning
-      generative media (image, video, audio, and 3D), LLMs, and multimodal foundation models. I analyse
-      model architectures to find where compute and memory go, then translate ideas from the literature,
-      such as diffusion caching, sparse attention, token routing, quantization, and distillation, into
-      measurable gains, individually or combined. Their gains are often non-additive, so finding combinations
-      that cut end-to-end latency without degrading quality takes careful profiling and controlled
-      experimentation on NVIDIA Hopper and Blackwell GPUs.
+      generative media (image, video, audio, and 3D), LLMs, and multimodal foundation models. I profile each
+      architecture to see where its compute and memory go, then bring in methods from the literature, such as
+      diffusion caching, sparse attention, token routing, quantization, and distillation, and test them on
+      it, both alone and layered together. Since these gains rarely add up cleanly, I run controlled
+      experiments across NVIDIA, AMD, and CPU targets to find the combination that gives the largest
+      end-to-end speed-up at unchanged output quality.
     </p>
     <p>
       This work has led me to a broader research question: how can the spatial, temporal, and physical
