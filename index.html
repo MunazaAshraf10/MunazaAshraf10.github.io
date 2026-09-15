@@ -224,10 +224,11 @@
       generative media (image, video, audio, and 3D), LLMs, and multimodal foundation models. My work is a continuous cycle of analysing model
       architectures to locate where compute and memory are spent, and translating ideas from the
       literature, such as diffusion caching, sparse attention, token routing, quantization, and
-      distillation, into measurable gains on models they were never evaluated on. I am particularly
-      interested in how these methods interact: their gains are often non-additive when combined, so
-      identifying combinations that reduce end-to-end latency without degrading quality requires careful
-      profiling and controlled experimentation on NVIDIA Hopper and Blackwell GPUs.
+      distillation, into measurable gains on production models, whether applied individually or combined
+      to extract the maximum speed-up a given architecture allows. I am particularly interested in how these
+      methods interact: their gains are often non-additive when combined, so identifying combinations that
+      reduce end-to-end latency without degrading quality requires careful profiling and controlled
+      experimentation on NVIDIA Hopper and Blackwell GPUs.
     </p>
     <p>
       This systems work has led me to a broader research question: how can the spatial, temporal, and
