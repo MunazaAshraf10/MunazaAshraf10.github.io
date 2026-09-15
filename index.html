@@ -220,42 +220,24 @@
     <h2 id="about">About Me</h2>
     <p>
       I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London, where I
-      turn recent machine learning research into reliable production systems. My work covers more than
-      1,000 models spanning generative media, LLMs, VLMs, and multimodal systems. My day to day work sits
-      at the boundary between ML research and systems engineering: I take recent papers on diffusion
-      caching, attention kernels, token routing, context parallelism, and knowledge distillation, reproduce
-      them on NVIDIA Hopper and Blackwell GPUs, profile them end to end through CUDA traces and
-      communication overhead analysis, and ship whatever actually moves latency, throughput, or memory in
-      production. That work has taught me that a capable model is only useful when its reasoning fits
-      within real limits on latency, memory, and compute.
+      integrate, optimise, and serve 1,000+ production models across image and video generation, 3D,
+      speech, LLMs, and VLMs. I take recent papers on diffusion caching, sparse attention, token routing,
+      context parallelism, and distillation, reproduce them on NVIDIA Hopper and Blackwell GPUs, profile
+      them end to end, and ship what actually moves latency, throughput, or memory in production.
     </p>
     <p>
-      That experience motivates my research on <b>efficient world and multimodal models for physical
-      AI</b>. I want embodied systems to understand how environments evolve, how actions change them,
-      and how physical constraints shape what can happen next. My approach is to transfer the spatial,
-      temporal, and physical reasoning of large world models into compact policies through knowledge
-      distillation. The goal is to retain useful world knowledge without carrying the full world model
-      at deployment, making intelligent agents faster and more practical on constrained hardware. As a
-      first concrete study in this direction, I independently implemented
-      <a href="https://arxiv.org/pdf/2511.20095">WPT</a> from the paper on top of a frozen pretrained
-      OccWorld and nuScenes, covering the world model adapter, teacher, reward model, and the policy query
-      and world reward distillation stages.
-      At Runware I have also applied <a href="https://arxiv.org/abs/2605.14513v1">HASTE</a>, head wise
-      adaptive sparse attention for video diffusion, to production video models such as Wan 2.2 and LTX 2.3,
-      profiling attention sparsity, memory, and output quality to extract real speed ups from the method.
-    </p>
-    <p>
-      My path to this research has been shaped by building systems that must work beyond a benchmark.
-      Alongside Runware, I was a founding engineer of <a href="https://medtalk.co/">MedTalk</a> at
-      Faz Australia, a clinical AI product for real time transcription, clinical notes, and billing
-      now used by <b>50,000+ clinicians</b>. Before that I was a Computer Vision Engineer at
-      <a href="https://visionrdai.com/">VisionRD</a>, where I built assembly line perception systems
-      deployed for Toyota and Thal Engineering.
-    </p>
-    <p>
-      I received my B.Sc. (Hons.) in Software Engineering from the University of Engineering &amp;
-      Technology (UET) Taxila with a CGPA of <b>3.94/4.0</b> and the <b>Silver Medal</b>
-      for the second highest aggregate in my session across all four years.
+      My research interest is <b>efficient world and multimodal models for embodied AI</b>: transferring
+      the spatial, temporal, and physical reasoning of large world models into compact policies through
+      knowledge distillation and efficient training and inference under strict latency, memory, and
+      compute constraints. My independent implementation of
+      <a href="https://arxiv.org/pdf/2511.20095">WPT</a> on a frozen pretrained OccWorld with nuScenes is
+      the concrete starting point for this work, and at Runware I have applied
+      <a href="https://arxiv.org/abs/2605.14513v1">HASTE</a> sparse attention to production video models
+      such as Wan 2.2 and LTX 2.3. Previously I was a founding engineer of
+      <a href="https://medtalk.co/">MedTalk</a>, a clinical AI product used by <b>50,000+ clinicians</b>,
+      and a Computer Vision Engineer at <a href="https://visionrdai.com/">VisionRD</a> building assembly
+      line perception for Toyota and Thal Engineering. I hold a B.Sc. (Hons.) in Software Engineering from
+      UET Taxila with a CGPA of <b>3.94/4.0</b> and the <b>Silver Medal</b>.
     </p>
 
     <h2 id="news">News</h2>
