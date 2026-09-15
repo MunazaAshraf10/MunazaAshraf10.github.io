@@ -219,11 +219,15 @@
 
     <h2 id="about">About Me</h2>
     <p>
-      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London, where I
-      integrate, optimise, and serve 1,000+ production models across image and video generation, 3D,
-      speech, LLMs, and VLMs. I take recent papers on diffusion caching, sparse attention, token routing,
-      context parallelism, and distillation, reproduce them on NVIDIA Hopper and Blackwell GPUs, profile
-      them end to end, and ship what actually moves latency, throughput, or memory in production.
+      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London, working on
+      efficient training and inference for 1,000+ production models across image and video generation, 3D,
+      speech, LLMs, and VLMs. Much of my work is research driven: when a new model is released I study its
+      architecture to understand where its compute and memory go, then test which ideas from the literature,
+      such as diffusion caching, sparse attention, token routing, context parallelism, quantization, and
+      distillation, transfer to it and which fail. I am especially interested in how these methods interact,
+      since layering a caching scheme on a sparse attention kernel on a distilled model rarely compounds the
+      way each paper suggests, and finding the combination that gives the largest real gain on NVIDIA Hopper
+      and Blackwell GPUs takes careful profiling and experiment design.
     </p>
     <p>
       My research interest is <b>efficient world and multimodal models for embodied AI</b>: transferring
