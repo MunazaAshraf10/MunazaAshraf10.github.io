@@ -220,29 +220,33 @@
 
     <h2 id="about">About Me</h2>
     <p>
-      I am an Applied ML Engineer at <a href="https://runware.ai/">Runware</a> in London, where I make
-      generative media (image, video, audio, and 3D), LLMs, and multimodal foundation models fast enough to
-      serve at scale on a platform running 1,000+ models. Every new architecture is a fresh optimisation
-      problem: I profile it to identify where compute and memory are spent, then select and adapt methods
-      from the current literature, including diffusion caching, sparse attention, token routing,
-      quantization, distillation, and whatever else the architecture calls for, to address those
-      bottlenecks. Because these methods interact, and combining them rarely yields the sum of their
-      individual gains, much of my work is designing controlled experiments across data centre and workstation
-      NVIDIA GPUs, from Hopper and Blackwell to Ada generation cards, to find the combination that delivers the largest end-to-end speed-up at the lowest compute cost
-      while preserving output quality.
+      I am an Applied ML Engineer at London-based <a href="https://runware.ai/">Runware</a>, where I make
+      generative media, LLM, and multimodal models fast enough to serve at scale on a platform running
+      1,000+ models. For each new architecture I profile where compute and memory go,
+      then adapt methods from the literature, such as diffusion caching, sparse attention, token routing,
+      quantization, and distillation, to remove those bottlenecks.
+    </p>
+    <p>
+      These methods interact, and stacking them rarely adds up to the sum of their gains. So much of my work
+      is controlled experiments across Hopper, Blackwell, and Ada GPUs to find the combination with the
+      largest end-to-end speed-up at the same output quality.
     </p>
     <p>
       Optimizing these models every day is what led me to my research direction: world models for physical
-      AI, and how to distill them. Large world models
-      learn how scenes evolve, but they are too heavy to run on a robot or a car in real time, so I want to
-      research how to transfer their spatial, temporal, and physical understanding into compact models and
-      policies that run under tight latency, memory, and compute budgets. I implemented
-      <a href="https://arxiv.org/pdf/2511.20095">WPT</a> on a frozen pretrained OccWorld with nuScenes (the
-      paper uses Drive-OccWorld) to distill world model guidance into a compact driving policy.
-      <a href="#publications">My paper</a> with <a href="https://github.com/bghira">Bghira</a>, now under
-      review, uses reverse distillation to recover the withheld audio tokenizer of MiniMax Music 3, and shows
-      that an encoder trained only on generator outputs transfers to real recordings (0.92 vs. 0.91 of the
-      reachable conditioning).
+      AI, and how to distill them. Large world models learn how scenes evolve, but are too heavy to run on a
+      robot or a car in real time. The question I want to study is <b>how much of a large world model's
+      spatial, temporal, and physical reasoning can be transferred into a compact policy that no longer needs
+      the world model at inference time.</b>
+    </p>
+    <p>
+      I independently reimplemented <a href="https://arxiv.org/pdf/2511.20095">WPT</a> on a frozen
+      pretrained OccWorld with nuScenes (the paper uses Drive-OccWorld), so
+      the compact driving policy runs without the world model. In <a href="#publications">my paper</a> with
+      <a href="https://github.com/bghira">Bghira</a>, now under review, I recover the withheld audio tokenizer
+      of MiniMax Music 3 by reverse distillation from the generator's own outputs. Trained only on generated
+      music, the encoder reaches 92% of the best achievable condition replay
+      score on real recordings (how faithfully its codes steer the generator), against 91% on generated
+      music.
     </p>
     <p>
       Previously, I was a founding engineer at <a href="https://medtalk.co/">MedTalk</a>, a clinical AI
