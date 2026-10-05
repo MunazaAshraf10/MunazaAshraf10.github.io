@@ -208,6 +208,7 @@
 
     <nav class="site-nav" aria-label="Page sections">
       <a href="#news">News</a>
+      <a href="#publications">Publications</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
       <a href="#research">Research</a>
@@ -253,7 +254,9 @@
     <h2 id="news">News</h2>
     <ul class="news">
       <li><span class="date">09/2026</span><span class="news-item">Open sourced my independent implementation of <a href="https://arxiv.org/pdf/2511.20095">WPT</a>, world model distillation into a compact driving policy on OccWorld and nuScenes (<a href="https://github.com/MunazaAshraf10/world-to-policy-distillation">code</a>).</span></li>
-      <li><span class="date">08/2026</span><span class="news-item">Reverse engineered an <a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">open RVQ encoder for MiniMax Music 3</a> with <a href="https://github.com/bghira">bghira</a> of SimpleTuner.</span></li>
+      <li><span class="date">08/2026</span><span class="news-item">Started research on recovering the withheld audio tokenizer of MiniMax Music 3 by reverse distillation with <a href="https://github.com/bghira">Bghira</a>; the paper is now <b>under review</b> (<a href="https://github.com/MunazaAshraf10/rvq-reverse-distillation">code</a>).</span></li>
+      <li><span class="date">08/2026</span><span class="news-item">Started <b><a href="https://www.juricratic.com/">Juricratic</a></b>, a litigation intelligence venture, with <a href="https://www.linkedin.com/in/connorpatrickodea">Connor</a>.</span></li>
+      <li><span class="date">08/2026</span><span class="news-item">Reverse engineered an <a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">open RVQ encoder for MiniMax Music 3</a> with <a href="https://github.com/bghira">Bghira</a> of SimpleTuner.</span></li>
       <li><span class="date">08/2026</span><span class="news-item">Completed <b>Padelytix</b>, a multi camera player and ball tracking and highlight extraction system for padel.</span></li>
       <li><span class="date">07/2026</span><span class="news-item">Shipped Runware's <b>LoRA training platform</b> (<a href="https://runware.ai/lora-training">platform</a>).</span></li>
       <li><span class="date">05/2026</span><span class="news-item">Implemented <a href="https://arxiv.org/abs/2605.14513v1">HASTE</a> sparse attention for Wan 2.2 and LTX 2.3 in production.</span></li>
@@ -270,6 +273,26 @@
         <li><span class="date">09/2020</span><span class="news-item">Started my B.Sc. (Hons.) in Software Engineering at <b>UET Taxila</b>.</span></li>
       </ul>
     </details>
+
+    <h2 id="publications">Publications</h2>
+    <ul class="pubs">
+      <li>
+        <span class="title">Recovering a Withheld Audio Tokenizer from Its Generator: Reverse Distillation of the MiniMax Music 3 Encoder, In and Out of Distribution</span>
+        <ul class="meta">
+          <li><b><u>Munaza Ashraf</u></b>, <a href="https://github.com/bghira">Bghira</a></li>
+          <li>
+            <span class="venue">Under review, 2026.</span>
+            <span class="plinks"><a href="https://github.com/MunazaAshraf10/rvq-reverse-distillation">code</a> | <a href="https://huggingface.co/Munaza10/rvq-reverse-distillation">models</a> | <a href="https://huggingface.co/datasets/Munaza10/mm3-ood">MM3 OOD dataset</a></span>
+          </li>
+          <li>Recovers the withheld audio tokenizer of the open 8B MiniMax Music 3 generator by reverse
+            distillation from the generator's own codes, giving a text only model audio prompting for reference
+            guided generation and continuation. The encoder transfers out of distribution: recorded music keeps
+            as much reachable conditioning as generated music (0.92 vs. 0.91), and degraded view training
+            restores robustness to lossy audio (0.82 vs. 0.50). Releases the encoders, code, and MM3 OOD, a new
+            240 track out of distribution benchmark.</li>
+        </ul>
+      </li>
+    </ul>
 
     <h2 id="education">Education</h2>
     <div class="education-block">
@@ -489,10 +512,10 @@
         <li>
           <span class="title">Reverse Engineering the RVQ Audio Encoder of MiniMax Music 3</span>
           <ul class="meta">
-            <li><span class="venue">Independent collaboration with bghira, SimpleTuner, August 2026.</span>
+            <li><span class="venue">Independent collaboration with Bghira, SimpleTuner, August 2026.</span>
               <span class="plinks"><a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">model</a></span></li>
             <li>Trained an open approximate RVQ encoder from the released model's output distributions with
-              <a href="https://github.com/bghira">bghira</a>, enabling reference audio encoding for a decoder only release.</li>
+              <a href="https://github.com/bghira">Bghira</a>, enabling reference audio encoding for a decoder only release.</li>
           </ul>
         </li>
         <li>
@@ -509,7 +532,7 @@
 
     <h2 id="projects">Projects</h2>
     <ul>
-      <li><b>Juricratic: AI Litigation Intelligence, Personal Venture with <a href="https://www.linkedin.com/in/connorpatrickodea">Connor</a>, 2026&ndash;Present</b><br>
+      <li><b>Juricratic: AI Litigation Intelligence, Personal Venture with <a href="https://www.linkedin.com/in/connorpatrickodea">Connor</a>, August 2026&ndash;Present</b><br>
         A litigation intelligence layer that turns fragmented case data into strategic foresight. Models legal
         matters as imperfect information games with thousands of reproducible simulations, a Synthetic Bench of
         role bound LLM agents (judge, jury, opposing counsel, client), and matter state inference with source
@@ -534,7 +557,7 @@
         Compact EVA based ViT fine tuned from <a href="https://huggingface.co/Freepik/nsfw_image_detector">Freepik's detector</a>
         for a production safety taxonomy in under one second.</li>
       <li><b>Reverse Engineering the RVQ Audio Encoder for MiniMax Music 3, August 2026</b><br>
-        Open approximate encoder trained with <a href="https://github.com/bghira">bghira</a> of SimpleTuner.
+        Open approximate encoder trained with <a href="https://github.com/bghira">Bghira</a> of SimpleTuner.
         <a href="https://huggingface.co/SimpleTuner/open-rvq-encoder-minimax-music3">Model on Hugging Face</a>.</li>
       <li><b>Padelytix &ndash; Real Time Multi Camera Sports Perception, 2026</b><br>
         Player and ball tracking, clothing based re identification, court homography, and rally and highlight
