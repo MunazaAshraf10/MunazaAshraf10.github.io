@@ -223,18 +223,18 @@
       I'm an Applied ML Engineer at <a href="https://runware.ai/">Runware</a>, where I work on
       inference for a platform serving 1,000+ generative media, LLM, and multimodal models. When a new
       architecture comes in, I profile it to see where compute and memory actually go, then bring in methods
-      from recent papers to fix the bottlenecks: diffusion caching, sparse attention, token routing,
+      from recent papers to address the bottlenecks: diffusion caching, sparse attention, token routing,
       quantization, and distillation.
     </p>
     <p>
       The hard part is that these methods interact. Stacking two speedups rarely gives you both, so a lot of
-      my time goes into controlled experiments on Hopper, Blackwell, and RTX GPUs to find the combination that
+      my time goes into controlled experiments on Hopper, Blackwell, and Ada (RTX) GPUs to find the combination that
       is fastest end to end without losing output quality.
     </p>
     <p>
       Optimizing these models every day is what led me to my research direction: world models for physical
       AI, and how to distill them. Large world models learn how scenes evolve, but they are far too heavy to
-      run in real time on a robot or a car. The question I want to work on is <b>how much of a world model's
+      run in real time on a robot or a car. The question I want to study is <b>how much of a world model's
       spatial, temporal, and physical reasoning can be distilled into a compact policy that no longer needs
       the world model at inference time.</b>
     </p>
