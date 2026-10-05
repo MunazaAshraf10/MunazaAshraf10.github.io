@@ -232,19 +232,16 @@
       while preserving output quality.
     </p>
     <p>
-      Working with these models every day has shaped what I want to research. Large world models are
-      learning how scenes move and change over time, but they are far too heavy for a robot or a car to run
-      in real time. I want to build <b>world models for physical AI</b> that keep that spatial, temporal, and
-      physical understanding while fitting into tight latency, memory, and compute budgets, and I see
-      <b>knowledge distillation</b> as the most direct way to get there. My first step was implementing
-      <a href="https://arxiv.org/pdf/2511.20095">WPT</a> myself on a frozen pretrained OccWorld with nuScenes
-      (the paper uses Drive-OccWorld), distilling world model guidance into a compact driving policy. Distillation
-      is also at the heart of <a href="#publications">my first paper</a>, now under review with
-      <a href="https://github.com/bghira">Bghira</a>. MiniMax Music 3 never released its audio tokenizer, so
-      I recovered it by reverse distillation, letting the generator label its own outputs so an encoder could
-      learn to invert it. The finding I care most about is that a model trained only on a generator's outputs
-      still works on real recordings: recorded music recovers as much of the reachable conditioning as
-      generated music (0.92 vs. 0.91).
+      My research interest is world models for physical AI, and how to distill them. Large world models
+      learn how scenes evolve, but they are too heavy to run on a robot or a car in real time, so I work on
+      transferring their spatial, temporal, and physical understanding into compact models and policies under
+      tight latency, memory, and compute budgets. I implemented
+      <a href="https://arxiv.org/pdf/2511.20095">WPT</a> on a frozen pretrained OccWorld with nuScenes (the
+      paper uses Drive-OccWorld) to distill world model guidance into a compact driving policy.
+      <a href="#publications">My paper</a> with <a href="https://github.com/bghira">Bghira</a>, now under
+      review, uses reverse distillation to recover the withheld audio tokenizer of MiniMax Music 3, and shows
+      that an encoder trained only on generator outputs transfers to real recordings (0.92 vs. 0.91 of the
+      reachable conditioning).
     </p>
     <p>
       Previously, I was a founding engineer at <a href="https://medtalk.co/">MedTalk</a>, a clinical AI
