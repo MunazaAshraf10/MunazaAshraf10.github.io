@@ -289,18 +289,18 @@
             <span class="venue">Under review, 2026.</span>
             <span class="plinks"><a href="https://github.com/MunazaAshraf10/rvq-reverse-distillation">code</a> | <a href="https://huggingface.co/Munaza10/rvq-reverse-distillation">models</a> | <a href="https://huggingface.co/datasets/bghira/minimax-music3-rvq-reverse-distillation">training data</a> | <a href="https://huggingface.co/datasets/Munaza10/mm3-ood">MM3 OOD dataset</a></span>
           </li>
-          <li>MiniMax Music 3 is the most capable open music generator, but its audio tokenizer was never
+          <li>MiniMax Music 3 is a capable open-weight music generator, but its audio tokenizer was never
             released, so it could only be prompted with text. This work recovers the missing tokenizer by
             <b>reverse distillation</b>: the generator labels its own outputs with the exact codes and code
-            distributions that produced them, and an encoder learns the inverse map. This unlocks two new audio
-            interfaces for an 8B text only model, <b>reference guided generation</b> and <b>continuation</b>,
+            distributions that produced them, and an encoder learns the inverse map. This enables two new audio
+            interfaces for an 8B text-only model, <b>reference-guided generation</b> and <b>continuation</b>,
             benchmarked against MusicGen.</li>
           <li>The central finding is that an inverse learned purely from a generator's outputs <b>transfers to
             real recordings</b>: recorded music recovers as large a share of the reachable conditioning as
-            generated music (<b>0.92 vs. 0.91</b>), and unseen genres are encoded as well as seen ones. Where it
-            breaks, under band limiting and lossy coding, degraded view training restores it (<b>0.82 vs.
-            0.50</b> at a 4&nbsp;kHz low pass) at a cost of only 0.01 on clean audio.</li>
-          <li>Encoders, code, training traces, and <b>MM3 OOD</b>, a new 240 track out of distribution
+            generated music (<b>0.92 vs. 0.91</b>). Unseen genres are also encoded as well as seen ones.</li>
+          <li>The encoder does break under band limiting and lossy coding. Degraded-view training restores it
+            (<b>0.82 vs. 0.50</b> at a 4&nbsp;kHz low pass) at a cost of only 0.01 on clean audio.</li>
+          <li>Encoders, code, training traces, and <b>MM3 OOD</b>, a new 240-track out-of-distribution
             benchmark, are publicly released.</li>
         </ul>
       </li>
